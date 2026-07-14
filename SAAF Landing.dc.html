@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/aval-os-latam-design-system-d0758eaf-d469-44e2-b04f-0ad30a3d31f2/colors_and_type.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  a { text-decoration: none; }
+  .saaf-page a { color: inherit; }
+  .saaf-page a:hover { color: inherit; }
+  .lnk-red { color: var(--red-600) !important; }
+  .lnk-red:hover { color: var(--red-700) !important; }
+  .feat:hover { border-color: var(--red-200) !important; transform: translateY(-3px); }
+  .feat { transition: transform .18s cubic-bezier(.16,1,.3,1), border-color .18s, box-shadow .18s; }
+  .plan:hover { box-shadow: var(--shadow-lg) !important; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  .faq-plus { transition: transform .2s ease; }
+  .cta-btn { transition: background-color .15s, transform .15s; }
+  .cta-btn:active { transform: translateY(1px); }
+  [data-lucide] { width: 22px; height: 22px; stroke-width: 1.75; }
+  .opt-badge { font-family: var(--font-mono); }
+  @keyframes floatglow { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
+</style>
+</helmet>
+
+<div style="display:flex; flex-direction:column; gap:28px; padding:56px; background:#e9ebef; min-height:100vh; font-family:var(--font-sans)">
+
+  <div style="max-width:1400px">
+    <div style="font-family:var(--font-mono); font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--gray-500); margin-bottom:6px">Rediseño landing SAAF · Turno 1</div>
+    <div style="font-size:15px; color:var(--gray-600); max-width:760px">Dos direcciones completas del home. <a href="#1a" class="lnk-red" style="font-weight:600">1a</a> — clara, corporativa y de confianza. <a href="#1b" class="lnk-red" style="font-weight:600">1b</a> — oscura, de mayor impacto. Misma estructura y copy; distinta atmósfera.</div>
+  </div>
+
+  <section style="display:flex; gap:56px; align-items:flex-start; flex-wrap:wrap">
+
+    <!-- ============ OPTION 1A — CLARIDAD CORPORATIVA ============ -->
+    <div id="1a" style="width:1280px; flex:0 0 auto">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px">
+        <span class="opt-badge" style="background:var(--red-600); color:#fff; font-size:13px; font-weight:600; padding:5px 12px; border-radius:999px">1a</span>
+        <span style="font-size:15px; font-weight:600; color:var(--gray-800)">Claridad corporativa</span>
+        <span style="font-size:13px; color:var(--gray-500)">— clara · confiable · aire</span>
+      </div>
+
+      <div class="saaf-page" style="width:1280px; background:#fff; border:1px solid var(--gray-200); border-radius:20px; overflow:hidden; box-shadow:0 30px 60px -25px rgba(17,24,39,.25); color:var(--gray-800)">
+
+        <!-- header -->
+        <header style="display:flex; align-items:center; justify-content:space-between; padding:20px 40px; border-bottom:1px solid var(--gray-100)">
+          <div style="display:flex; align-items:center; gap:10px">
+            <div style="width:34px; height:34px; border-radius:9px; background:var(--red-600); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; letter-spacing:-.02em">S</div>
+            <span style="font-weight:700; font-size:19px; letter-spacing:-.02em">SAAF</span>
+          </div>
+          <nav style="display:flex; gap:30px; font-size:14px; font-weight:500; color:var(--gray-600)">
+            <a href="#1a">¿Quiénes somos?</a>
+            <a href="#1a">Características</a>
+            <a href="#1a">Planes</a>
+            <a href="#1a">Blog</a>
+            <a href="#1a">Contacto</a>
+          </nav>
+          <div style="display:flex; align-items:center; gap:14px">
+            <a href="#1a" style="font-size:14px; font-weight:600; color:var(--gray-700)">Iniciar sesión</a>
+            <a href="#a-cta" class="cta-btn" style="background:var(--red-600); color:#fff; font-size:14px; font-weight:600; padding:10px 18px; border-radius:11px">Solicitar demo</a>
+          </div>
+        </header>
+
+        <!-- hero -->
+        <div style="display:grid; grid-template-columns:1.05fr 1.15fr; gap:48px; align-items:center; padding:72px 40px 64px; background:linear-gradient(180deg,#fff 0%, var(--gray-50) 100%)">
+          <div>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:var(--red-50); color:var(--red-700); font-size:12.5px; font-weight:600; padding:6px 12px; border-radius:999px; letter-spacing:.02em; margin-bottom:22px">
+              <span style="width:6px; height:6px; border-radius:999px; background:var(--red-600)"></span>
+              Control de activo fijo · LATAM
+            </div>
+            <h1 style="font-size:47px; line-height:1.08; letter-spacing:-.025em; font-weight:700; margin:0 0 20px; color:var(--gray-900)">El control de tu activo fijo, claro y en tiempo real</h1>
+            <p style="font-size:17.5px; line-height:1.55; color:var(--gray-600); margin:0 0 32px; max-width:520px">SAAF centraliza el registro, la ubicación y la depreciación de cada activo de tu empresa. Administración rápida, precisa y auditable — sin hojas de cálculo.</p>
+            <div style="display:flex; gap:14px; margin-bottom:34px">
+              <a href="#a-cta" class="cta-btn" style="background:var(--red-600); color:#fff; font-size:16px; font-weight:600; padding:15px 28px; border-radius:13px; box-shadow:var(--shadow-sm)">Solicitar demo</a>
+              <a href="#a-cta" class="cta-btn" style="background:#fff; color:var(--gray-800); font-size:16px; font-weight:600; padding:15px 28px; border-radius:13px; border:1px solid var(--gray-300)">Hablar con un asesor</a>
+            </div>
+            <div style="display:flex; gap:28px">
+              <div><div style="font-size:24px; font-weight:700; color:var(--gray-900)">+10</div><div style="font-size:13px; color:var(--gray-500)">países en LATAM</div></div>
+              <div style="width:1px; background:var(--gray-200)"></div>
+              <div><div style="font-size:24px; font-weight:700; color:var(--gray-900)">QR + código de barras</div><div style="font-size:13px; color:var(--gray-500)">en cada activo</div></div>
+            </div>
+          </div>
+
+          <!-- dashboard mockup A -->
+          <div style="background:#fff; border:1px solid var(--gray-200); border-radius:18px; box-shadow:0 24px 48px -20px rgba(17,24,39,.28); overflow:hidden">
+            <div style="display:flex; align-items:center; gap:7px; padding:13px 16px; background:var(--gray-50); border-bottom:1px solid var(--gray-100)">
+              <span style="width:10px;height:10px;border-radius:999px;background:#ef5f5f"></span>
+              <span style="width:10px;height:10px;border-radius:999px;background:#f6c150"></span>
+              <span style="width:10px;height:10px;border-radius:999px;background:#5ec26a"></span>
+              <span style="margin-left:8px; font-size:12px; color:var(--gray-400); font-family:var(--font-mono)">app.saaf.com · Panel</span>
+            </div>
+            <div style="padding:20px">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px">
+                <div style="font-size:15px; font-weight:700; color:var(--gray-800)">Panel de activos</div>
+                <div style="font-size:11px; color:var(--gray-400)">Grupo Delta · CDMX</div>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:16px">
+                <div style="background:var(--gray-50); border:1px solid var(--gray-100); border-radius:11px; padding:12px"><div style="font-size:11px; color:var(--gray-500); margin-bottom:6px">Activos totales</div><div style="font-size:21px; font-weight:700; color:var(--gray-900)">1,248</div></div>
+                <div style="background:var(--gray-50); border:1px solid var(--gray-100); border-radius:11px; padding:12px"><div style="font-size:11px; color:var(--gray-500); margin-bottom:6px">Valor neto</div><div style="font-size:21px; font-weight:700; color:var(--gray-900)">$18.4M</div></div>
+                <div style="background:var(--red-50); border:1px solid var(--red-100); border-radius:11px; padding:12px"><div style="font-size:11px; color:var(--red-700); margin-bottom:6px">Por auditar</div><div style="font-size:21px; font-weight:700; color:var(--red-700)">37</div></div>
+              </div>
+              <div style="display:flex; align-items:flex-end; gap:8px; height:82px; padding:12px 4px 0; border-top:1px solid var(--gray-100); margin-bottom:14px">
+                <div style="flex:1; height:38%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                <div style="flex:1; height:55%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                <div style="flex:1; height:47%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                <div style="flex:1; height:72%; background:var(--red-500); border-radius:5px 5px 0 0"></div>
+                <div style="flex:1; height:63%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                <div style="flex:1; height:88%; background:var(--red-600); border-radius:5px 5px 0 0"></div>
+                <div style="flex:1; height:51%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:8px">
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px"><span style="width:7px;height:7px;border-radius:999px;background:var(--green-500)"></span><span style="flex:1; color:var(--gray-700)">Laptop Dell Latitude · TI</span><span style="color:var(--gray-400); font-family:var(--font-mono)">AF-0421</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px"><span style="width:7px;height:7px;border-radius:999px;background:var(--green-500)"></span><span style="flex:1; color:var(--gray-700)">Torno CNC · Industrial</span><span style="color:var(--gray-400); font-family:var(--font-mono)">AF-1180</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px"><span style="width:7px;height:7px;border-radius:999px;background:var(--gray-300)"></span><span style="flex:1; color:var(--gray-500)">Escritorio ejecutivo · Mobiliario</span><span style="color:var(--gray-400); font-family:var(--font-mono)">AF-0092</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- trust bar -->
+        <div style="padding:26px 40px; border-top:1px solid var(--gray-100); border-bottom:1px solid var(--gray-100); background:#fff">
+          <div style="text-align:center; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--gray-400); margin-bottom:16px">Presencia en Latinoamérica</div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px 10px">
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">México</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Colombia</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Perú</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Chile</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Argentina</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Costa Rica</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Panamá</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Bolivia</span><span style="color:var(--gray-300)">·</span>
+            <span style="font-size:14px; font-weight:600; color:var(--gray-600)">Guatemala</span>
+          </div>
+        </div>
+
+        <!-- features -->
+        <div style="padding:80px 40px; background:var(--gray-50)">
+          <div style="text-align:center; max-width:640px; margin:0 auto 48px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Funciones del SAAF</div>
+            <h2 style="font-size:34px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 14px; color:var(--gray-900)">Todo lo que necesitas para administrar tus activos</h2>
+            <p style="font-size:16px; color:var(--gray-600); margin:0">Módulos diseñados para el trabajo real de campo y de contabilidad, en una sola plataforma.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px">
+            <div class="feat" style="background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:46px; height:46px; border-radius:12px; background:var(--red-50); color:var(--red-600); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="building-2"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Software multiempresa</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Gestiona varias empresas desde un solo panel, con información consolidada de todos sus activos.</p>
+            </div>
+            <div class="feat" style="background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:46px; height:46px; border-radius:12px; background:var(--red-50); color:var(--red-600); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="qr-code"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Dashboard con QR</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Cada activo genera automáticamente su código QR y de barras, enlazado a su ficha completa.</p>
+            </div>
+            <div class="feat" style="background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:46px; height:46px; border-radius:12px; background:var(--red-50); color:var(--red-600); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="package-plus"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Alta de activos ágil</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Registra activos en segundos con formularios guiados y detección automática de duplicados.</p>
+            </div>
+            <div class="feat" style="background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:46px; height:46px; border-radius:12px; background:var(--red-50); color:var(--red-600); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="trending-down"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Depreciación automática</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Cálculo fiscal y financiero de la depreciación, sin hojas de cálculo ni errores manuales.</p>
+            </div>
+            <div class="feat" style="background:#fff; border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:46px; height:46px; border-radius:12px; background:var(--red-50); color:var(--red-600); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="cloud-upload"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Importación masiva</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Carga todo tu inventario con una plantilla y ponte al corriente en minutos, no en semanas.</p>
+            </div>
+            <div class="feat" style="background:linear-gradient(135deg,var(--red-600),var(--red-700)); border:1px solid var(--red-700); border-radius:16px; padding:28px; color:#fff; display:flex; flex-direction:column; justify-content:space-between">
+              <div>
+                <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:#fff">¿Listo para verlo funcionar?</h3>
+                <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,.9); margin:0 0 18px">Agenda una demo en tiempo real con un asesor.</p>
+              </div>
+              <a href="#a-cta" class="cta-btn" style="background:#fff; color:var(--red-700); font-size:14.5px; font-weight:700; padding:12px 20px; border-radius:11px; align-self:flex-start">Solicitar demo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- dashboard image band -->
+        <div style="padding:80px 40px; background:#fff">
+          <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:48px; align-items:center">
+            <div>
+              <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Interfaz amigable</div>
+              <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 16px; color:var(--gray-900)">Conoce el estado de tus activos de un vistazo</h2>
+              <p style="font-size:16px; line-height:1.6; color:var(--gray-600); margin:0 0 24px">Un panel claro para saber qué tienes, dónde está y cuánto vale — en todo momento. Filtra por familia, ubicación o estado de conservación.</p>
+              <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px">
+                <li style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600)"></i>Ficha completa con foto, QR y ubicación</li>
+                <li style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600)"></i>Auditorías desde el celular en campo</li>
+                <li style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600)"></i>Reportes exportables a Excel</li>
+              </ul>
+            </div>
+            <div style="border:1px solid var(--gray-200); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:16/10; position:relative">
+              <image-slot id="a-dash" shape="rect" fit="cover" placeholder="Arrastra aquí una captura real del dashboard SAAF"></image-slot>
+            </div>
+          </div>
+        </div>
+
+        <!-- benefits -->
+        <div style="padding:80px 40px; background:var(--gray-900); color:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 44px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-400); margin-bottom:12px">Por qué elegir SAAF</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0; color:#fff">Beneficios que cuidan tu operación</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px">
+            <div style="padding:6px">
+              <div style="width:46px; height:46px; border-radius:12px; background:rgba(220,38,38,.18); color:var(--red-400); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="life-buoy"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:#fff">Asesoría constante</h3>
+              <p style="font-size:14.5px; line-height:1.6; color:var(--gray-400); margin:0">Acompañamiento continuo para que aproveches al máximo cada función del sistema.</p>
+            </div>
+            <div style="padding:6px">
+              <div style="width:46px; height:46px; border-radius:12px; background:rgba(220,38,38,.18); color:var(--red-400); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="shield-check"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:#fff">Información segura</h3>
+              <p style="font-size:14.5px; line-height:1.6; color:var(--gray-400); margin:0">SSL/HTTPS, cifrado punto a punto y acceso con OAuth2 — el estándar que usan bancos y Google.</p>
+            </div>
+            <div style="padding:6px">
+              <div style="width:46px; height:46px; border-radius:12px; background:rgba(220,38,38,.18); color:var(--red-400); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="refresh-cw"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:#fff">Mejoras constantes</h3>
+              <p style="font-size:14.5px; line-height:1.6; color:var(--gray-400); margin:0">Actualizaciones periódicas que mejoran tu operación, sin costo adicional.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- testimonials -->
+        <div style="padding:80px 40px; background:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 44px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Testimonios</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0; color:var(--gray-900)">Empresas que ya tienen el control</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px">
+            <div class="card" style="padding:32px; border-radius:16px">
+              <div style="display:flex; gap:3px; margin-bottom:16px; color:var(--amber-400)"><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i></div>
+              <p style="font-size:16.5px; line-height:1.6; color:var(--gray-800); margin:0 0 22px; font-weight:500">"Pasamos de un inventario en Excel imposible de auditar a tener cada activo etiquetado con QR. La conciliación contable ahora toma horas, no semanas."</p>
+              <div style="display:flex; align-items:center; gap:12px">
+                <div style="width:44px; height:44px; border-radius:999px; overflow:hidden; flex:0 0 auto"><image-slot id="a-t1" shape="circle" placeholder="Foto"></image-slot></div>
+                <div><div style="font-size:14px; font-weight:700; color:var(--gray-900)">Mariana Cortés</div><div style="font-size:13px; color:var(--gray-500)">Directora de Finanzas · Grupo Delta</div></div>
+              </div>
+            </div>
+            <div class="card" style="padding:32px; border-radius:16px">
+              <div style="display:flex; gap:3px; margin-bottom:16px; color:var(--amber-400)"><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i></div>
+              <p style="font-size:16.5px; line-height:1.6; color:var(--gray-800); margin:0 0 22px; font-weight:500">"La depreciación fiscal se calcula sola y la importación masiva nos dejó operando en un día. El soporte responde de verdad."</p>
+              <div style="display:flex; align-items:center; gap:12px">
+                <div style="width:44px; height:44px; border-radius:999px; overflow:hidden; flex:0 0 auto"><image-slot id="a-t2" shape="circle" placeholder="Foto"></image-slot></div>
+                <div><div style="font-size:14px; font-weight:700; color:var(--gray-900)">Rodrigo Salas</div><div style="font-size:13px; color:var(--gray-500)">Gerente de Activos · Industrias Norte</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- plans -->
+        <div style="padding:80px 40px; background:var(--gray-50)">
+          <div style="text-align:center; max-width:620px; margin:0 auto 44px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Planes</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 14px; color:var(--gray-900)">Un plan para cada tamaño de empresa</h2>
+            <p style="font-size:16px; color:var(--gray-600); margin:0">Cotización a medida según tu volumen de activos y número de empresas.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch">
+            <div class="plan" style="background:#fff; border:1px solid var(--gray-200); border-radius:18px; padding:32px; display:flex; flex-direction:column; transition:box-shadow .18s">
+              <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:6px">Esencial</div>
+              <div style="font-size:13.5px; color:var(--gray-500); margin-bottom:20px">Para empresas pequeñas que inician su control.</div>
+              <div style="font-size:28px; font-weight:700; color:var(--gray-900); margin-bottom:2px">1 empresa</div>
+              <div style="font-size:13px; color:var(--gray-500); margin-bottom:22px">hasta 500 activos</div>
+              <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:11px; flex:1">
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Registro con QR y código de barras</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Depreciación automática</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Importación masiva</li>
+              </ul>
+              <a href="#a-cta" class="cta-btn" style="text-align:center; background:#fff; color:var(--gray-800); border:1px solid var(--gray-300); font-size:15px; font-weight:600; padding:13px; border-radius:12px">Solicitar demo</a>
+            </div>
+            <div class="plan" style="background:#fff; border:2px solid var(--red-600); border-radius:18px; padding:32px; display:flex; flex-direction:column; position:relative; box-shadow:var(--shadow-lg)">
+              <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--red-600); color:#fff; font-size:11.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:5px 14px; border-radius:999px">Más elegido</div>
+              <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:6px">Profesional</div>
+              <div style="font-size:13.5px; color:var(--gray-500); margin-bottom:20px">Para empresas medianas en crecimiento.</div>
+              <div style="font-size:28px; font-weight:700; color:var(--gray-900); margin-bottom:2px">Hasta 5 empresas</div>
+              <div style="font-size:13px; color:var(--gray-500); margin-bottom:22px">activos ilimitados</div>
+              <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:11px; flex:1">
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Todo lo del plan Esencial</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Software multiempresa</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Auditoría móvil en campo</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Asesoría prioritaria</li>
+              </ul>
+              <a href="#a-cta" class="cta-btn" style="text-align:center; background:var(--red-600); color:#fff; font-size:15px; font-weight:600; padding:13px; border-radius:12px; box-shadow:var(--shadow-sm)">Solicitar demo</a>
+            </div>
+            <div class="plan" style="background:#fff; border:1px solid var(--gray-200); border-radius:18px; padding:32px; display:flex; flex-direction:column; transition:box-shadow .18s">
+              <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:6px">Corporativo</div>
+              <div style="font-size:13.5px; color:var(--gray-500); margin-bottom:20px">Para grupos y operaciones multinacionales.</div>
+              <div style="font-size:28px; font-weight:700; color:var(--gray-900); margin-bottom:2px">A medida</div>
+              <div style="font-size:13px; color:var(--gray-500); margin-bottom:22px">empresas ilimitadas</div>
+              <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:11px; flex:1">
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Todo lo del plan Profesional</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Integraciones y API</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Gerente de cuenta dedicado</li>
+              </ul>
+              <a href="#a-cta" class="cta-btn" style="text-align:center; background:#fff; color:var(--gray-800); border:1px solid var(--gray-300); font-size:15px; font-weight:600; padding:13px; border-radius:12px">Contactar ventas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA band -->
+        <div id="a-cta" style="padding:72px 40px; background:linear-gradient(120deg,var(--red-700),var(--red-600)); text-align:center; color:#fff">
+          <h2 style="font-size:34px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 14px; color:#fff">¿Listo para llevar el control de tus activos fijos?</h2>
+          <p style="font-size:17px; color:rgba(255,255,255,.9); margin:0 auto 30px; max-width:560px">Agenda una demo en tiempo real y conoce todos los beneficios que el SAAF brinda a tu empresa.</p>
+          <div style="display:flex; gap:14px; justify-content:center">
+            <a href="#a-cta" class="cta-btn" style="background:#fff; color:var(--red-700); font-size:16px; font-weight:700; padding:15px 30px; border-radius:13px">Solicitar demo</a>
+            <a href="#a-cta" class="cta-btn" style="background:rgba(255,255,255,.14); color:#fff; font-size:16px; font-weight:600; padding:15px 30px; border-radius:13px; border:1px solid rgba(255,255,255,.35)">Hablar con un asesor</a>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div style="padding:80px 40px; background:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 40px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Preguntas frecuentes</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0; color:var(--gray-900)">Resolvemos tus dudas</h2>
+          </div>
+          <div style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px">
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿Para qué empresas funciona el SAAF?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">Para cualquier empresa que necesite llevar un control adecuado de su activo fijo y conocer el estado en el que se encuentran sus activos, sin importar el rubro ni el tamaño.</p>
+            </details>
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿Qué puedo hacer en el SAAF?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">Registrar todos los activos fijos de tu empresa de forma rápida y sencilla, generar sus códigos QR y de barras, calcular su depreciación y auditarlos desde el celular en campo.</p>
+            </details>
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿En qué países tienen presencia?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">El SAAF opera en gran parte de Latinoamérica: México, Chile, Perú, Colombia, Costa Rica, Panamá, Bolivia, Guatemala y Argentina, entre otros.</p>
+            </details>
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿Qué tan segura está mi información?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">Usamos certificado SSL para HTTPS, cifrado punto a punto y acceso mediante token OAuth2 — el mismo estándar que emplean bancos y grandes plataformas. Además exigimos contraseñas alfanuméricas.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <footer style="padding:56px 40px 40px; background:var(--gray-900); color:var(--gray-400)">
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px">
+            <div>
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+                <div style="width:32px; height:32px; border-radius:9px; background:var(--red-600); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px">S</div>
+                <span style="font-weight:700; font-size:18px; color:#fff">SAAF</span>
+              </div>
+              <p style="font-size:14px; line-height:1.6; color:var(--gray-400); margin:0 0 16px; max-width:280px">La administración de activos fijos más fácil y rápida de Latinoamérica.</p>
+              <div style="font-size:13.5px; line-height:1.8"><div>Enrique Rébsamen 512, CDMX</div><a href="#1a" style="color:var(--red-400) !important; font-weight:600">(+52) 55-7047-1421</a></div>
+            </div>
+            <div><div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:14px">Producto</div><div style="display:flex; flex-direction:column; gap:9px; font-size:14px"><a href="#1a">Características</a><a href="#1a">Planes</a><a href="#1a">Demo</a></div></div>
+            <div><div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:14px">Empresa</div><div style="display:flex; flex-direction:column; gap:9px; font-size:14px"><a href="#1a">¿Quiénes somos?</a><a href="#1a">Blog</a><a href="#1a">Bolsa de trabajo</a></div></div>
+            <div><div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:14px">Contacto</div><div style="display:flex; flex-direction:column; gap:9px; font-size:14px"><a href="#1a">Solicitar demo</a><a href="#1a">Hablar con un asesor</a></div></div>
+          </div>
+          <div style="border-top:1px solid var(--gray-700); padding-top:22px; font-size:13px; color:var(--gray-500)">© 2026 SAAF · Software Activo Fijo. Todos los derechos reservados.</div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- ============ OPTION 1B — IMPACTO ============ -->
+    <div id="1b" style="width:1280px; flex:0 0 auto">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px">
+        <span class="opt-badge" style="background:var(--gray-900); color:#fff; font-size:13px; font-weight:600; padding:5px 12px; border-radius:999px">1b</span>
+        <span style="font-size:15px; font-weight:600; color:var(--gray-800)">Impacto</span>
+        <span style="font-size:13px; color:var(--gray-500)">— oscura · llamativa · formal</span>
+      </div>
+
+      <div class="saaf-page" style="width:1280px; background:#fff; border:1px solid var(--gray-200); border-radius:20px; overflow:hidden; box-shadow:0 30px 60px -25px rgba(17,24,39,.25); color:var(--gray-800)">
+
+        <!-- dark hero -->
+        <div style="background:radial-gradient(1100px 620px at 72% -8%, rgba(220,38,38,.30), transparent 60%), radial-gradient(700px 500px at 8% 110%, rgba(220,38,38,.12), transparent 60%), var(--gray-900); color:#fff; padding:0 0 76px">
+          <!-- header -->
+          <header style="display:flex; align-items:center; justify-content:space-between; padding:22px 40px">
+            <div style="display:flex; align-items:center; gap:10px">
+              <div style="width:34px; height:34px; border-radius:9px; background:var(--red-600); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px">S</div>
+              <span style="font-weight:700; font-size:19px; letter-spacing:-.02em; color:#fff">SAAF</span>
+            </div>
+            <nav style="display:flex; gap:30px; font-size:14px; font-weight:500; color:rgba(255,255,255,.72)">
+              <a href="#1b" style="color:rgba(255,255,255,.72) !important">¿Quiénes somos?</a>
+              <a href="#1b" style="color:rgba(255,255,255,.72) !important">Características</a>
+              <a href="#1b" style="color:rgba(255,255,255,.72) !important">Planes</a>
+              <a href="#1b" style="color:rgba(255,255,255,.72) !important">Blog</a>
+              <a href="#1b" style="color:rgba(255,255,255,.72) !important">Contacto</a>
+            </nav>
+            <div style="display:flex; align-items:center; gap:14px">
+              <a href="#1b" style="font-size:14px; font-weight:600; color:#fff !important">Iniciar sesión</a>
+              <a href="#b-cta" class="cta-btn" style="background:var(--red-600); color:#fff; font-size:14px; font-weight:600; padding:10px 18px; border-radius:11px">Solicitar demo</a>
+            </div>
+          </header>
+
+          <div style="text-align:center; max-width:840px; margin:0 auto; padding:64px 40px 0">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); color:#fff; font-size:12.5px; font-weight:600; padding:7px 14px; border-radius:999px; margin-bottom:28px">
+              <span style="width:6px; height:6px; border-radius:999px; background:var(--red-500)"></span>
+              La plataforma de activo fijo líder en LATAM
+            </div>
+            <h1 style="font-size:60px; line-height:1.03; letter-spacing:-.03em; font-weight:700; margin:0 0 22px; color:#fff">Domina tu activo fijo,<br><span style="color:var(--red-500)">de punta a punta</span></h1>
+            <p style="font-size:19px; line-height:1.55; color:rgba(255,255,255,.78); margin:0 auto 36px; max-width:600px">SAAF centraliza el registro, la ubicación y la depreciación de cada activo. Administración rápida, precisa y auditable — sin hojas de cálculo.</p>
+            <div style="display:flex; gap:14px; justify-content:center; margin-bottom:14px">
+              <a href="#b-cta" class="cta-btn" style="background:var(--red-600); color:#fff; font-size:16px; font-weight:700; padding:16px 32px; border-radius:13px; box-shadow:0 10px 30px -8px rgba(220,38,38,.7)">Solicitar demo</a>
+              <a href="#b-cta" class="cta-btn" style="background:rgba(255,255,255,.08); color:#fff; font-size:16px; font-weight:600; padding:16px 32px; border-radius:13px; border:1px solid rgba(255,255,255,.22)">Hablar con un asesor</a>
+            </div>
+          </div>
+
+          <!-- floating dashboard mockup -->
+          <div style="max-width:940px; margin:52px auto 0; padding:0 40px">
+            <div style="background:#fff; border-radius:18px; box-shadow:0 40px 80px -30px rgba(0,0,0,.7); overflow:hidden; border:1px solid rgba(255,255,255,.1)">
+              <div style="display:flex; align-items:center; gap:7px; padding:13px 16px; background:var(--gray-50); border-bottom:1px solid var(--gray-100)">
+                <span style="width:10px;height:10px;border-radius:999px;background:#ef5f5f"></span>
+                <span style="width:10px;height:10px;border-radius:999px;background:#f6c150"></span>
+                <span style="width:10px;height:10px;border-radius:999px;background:#5ec26a"></span>
+                <span style="margin-left:8px; font-size:12px; color:var(--gray-400); font-family:var(--font-mono)">app.saaf.com · Panel</span>
+              </div>
+              <div style="display:grid; grid-template-columns:200px 1fr; min-height:340px">
+                <div style="background:var(--gray-900); padding:20px 16px; display:flex; flex-direction:column; gap:6px">
+                  <div style="color:rgba(255,255,255,.55); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin:0 8px 8px">Menú</div>
+                  <div style="display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:9px; background:var(--red-600); color:#fff; font-size:13px; font-weight:600"><i data-lucide="layout-dashboard" style="width:16px;height:16px"></i>Panel</div>
+                  <div style="display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:9px; color:rgba(255,255,255,.66); font-size:13px"><i data-lucide="boxes" style="width:16px;height:16px"></i>Activos</div>
+                  <div style="display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:9px; color:rgba(255,255,255,.66); font-size:13px"><i data-lucide="building-2" style="width:16px;height:16px"></i>Empresas</div>
+                  <div style="display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:9px; color:rgba(255,255,255,.66); font-size:13px"><i data-lucide="trending-down" style="width:16px;height:16px"></i>Depreciación</div>
+                  <div style="display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:9px; color:rgba(255,255,255,.66); font-size:13px"><i data-lucide="file-bar-chart" style="width:16px;height:16px"></i>Reportes</div>
+                </div>
+                <div style="padding:22px 24px">
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px">
+                    <div style="font-size:16px; font-weight:700; color:var(--gray-900)">Panel de activos</div>
+                    <div style="font-size:11px; color:#fff; background:var(--green-600); padding:3px 9px; border-radius:999px; font-weight:600">En línea</div>
+                  </div>
+                  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:18px">
+                    <div style="background:var(--gray-50); border:1px solid var(--gray-100); border-radius:11px; padding:13px"><div style="font-size:10.5px; color:var(--gray-500); margin-bottom:6px">Activos</div><div style="font-size:19px; font-weight:700; color:var(--gray-900)">1,248</div></div>
+                    <div style="background:var(--gray-50); border:1px solid var(--gray-100); border-radius:11px; padding:13px"><div style="font-size:10.5px; color:var(--gray-500); margin-bottom:6px">Valor neto</div><div style="font-size:19px; font-weight:700; color:var(--gray-900)">$18.4M</div></div>
+                    <div style="background:var(--gray-50); border:1px solid var(--gray-100); border-radius:11px; padding:13px"><div style="font-size:10.5px; color:var(--gray-500); margin-bottom:6px">Empresas</div><div style="font-size:19px; font-weight:700; color:var(--gray-900)">5</div></div>
+                    <div style="background:var(--red-50); border:1px solid var(--red-100); border-radius:11px; padding:13px"><div style="font-size:10.5px; color:var(--red-700); margin-bottom:6px">Por auditar</div><div style="font-size:19px; font-weight:700; color:var(--red-700)">37</div></div>
+                  </div>
+                  <div style="display:flex; align-items:flex-end; gap:9px; height:96px; padding:12px 4px 0; border-top:1px solid var(--gray-100)">
+                    <div style="flex:1; height:42%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:60%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:50%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:78%; background:var(--red-500); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:66%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:92%; background:var(--red-600); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:55%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                    <div style="flex:1; height:70%; background:var(--gray-200); border-radius:5px 5px 0 0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- trust bar -->
+        <div style="padding:30px 40px; background:var(--gray-900); border-top:1px solid rgba(255,255,255,.08)">
+          <div style="text-align:center; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:16px">Con presencia en más de 10 países</div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px 22px">
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">México</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Colombia</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Perú</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Chile</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Argentina</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Costa Rica</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Panamá</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Bolivia</span>
+            <span style="font-size:15px; font-weight:600; color:rgba(255,255,255,.6)">Guatemala</span>
+          </div>
+        </div>
+
+        <!-- features -->
+        <div style="padding:84px 40px; background:#fff">
+          <div style="max-width:640px; margin:0 auto 48px; text-align:center">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Funciones del SAAF</div>
+            <h2 style="font-size:38px; line-height:1.12; letter-spacing:-.025em; font-weight:700; margin:0 0 14px; color:var(--gray-900)">Una plataforma, todo el control</h2>
+            <p style="font-size:16px; color:var(--gray-600); margin:0">Módulos pensados para el trabajo de campo y de contabilidad por igual.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px">
+            <div class="feat" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:48px; height:48px; border-radius:12px; background:var(--gray-900); color:var(--red-500); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="building-2"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Software multiempresa</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Gestiona varias empresas desde un solo panel, con información consolidada de todos sus activos.</p>
+            </div>
+            <div class="feat" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:48px; height:48px; border-radius:12px; background:var(--gray-900); color:var(--red-500); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="qr-code"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Dashboard con QR</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Cada activo genera automáticamente su código QR y de barras, enlazado a su ficha completa.</p>
+            </div>
+            <div class="feat" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:48px; height:48px; border-radius:12px; background:var(--gray-900); color:var(--red-500); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="package-plus"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Alta de activos ágil</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Registra activos en segundos con formularios guiados y detección automática de duplicados.</p>
+            </div>
+            <div class="feat" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:48px; height:48px; border-radius:12px; background:var(--gray-900); color:var(--red-500); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="trending-down"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Depreciación automática</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Cálculo fiscal y financiero de la depreciación, sin hojas de cálculo ni errores manuales.</p>
+            </div>
+            <div class="feat" style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px">
+              <div style="width:48px; height:48px; border-radius:12px; background:var(--gray-900); color:var(--red-500); display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="cloud-upload"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Importación masiva</h3>
+              <p style="font-size:14.5px; line-height:1.55; color:var(--gray-600); margin:0">Carga todo tu inventario con una plantilla y ponte al corriente en minutos, no en semanas.</p>
+            </div>
+            <div class="feat" style="background:var(--gray-900); border:1px solid var(--gray-900); border-radius:16px; padding:28px; color:#fff; display:flex; flex-direction:column; justify-content:space-between">
+              <div>
+                <div style="width:48px; height:48px; border-radius:12px; background:var(--red-600); color:#fff; display:flex; align-items:center; justify-content:center; margin-bottom:18px"><i data-lucide="sparkles"></i></div>
+                <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:#fff">Y mucho más</h3>
+                <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,.72); margin:0 0 18px">Reportes, auditoría móvil y una interfaz que tu equipo entiende desde el primer día.</p>
+              </div>
+              <a href="#b-cta" class="cta-btn" style="background:#fff; color:var(--gray-900); font-size:14.5px; font-weight:700; padding:12px 20px; border-radius:11px; align-self:flex-start">Ver demo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- dashboard image band -->
+        <div style="padding:84px 40px; background:var(--gray-50)">
+          <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center">
+            <div style="border:1px solid var(--gray-200); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:16/10; position:relative">
+              <image-slot id="b-dash" shape="rect" fit="cover" placeholder="Arrastra aquí una captura real del dashboard SAAF"></image-slot>
+            </div>
+            <div>
+              <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Interfaz amigable</div>
+              <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 16px; color:var(--gray-900)">El estado de tus activos, en un vistazo</h2>
+              <p style="font-size:16px; line-height:1.6; color:var(--gray-600); margin:0 0 24px">Un panel claro para saber qué tienes, dónde está y cuánto vale — en todo momento. Filtra por familia, ubicación o estado de conservación.</p>
+              <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px">
+                <li style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600)"></i>Ficha completa con foto, QR y ubicación</li>
+                <li style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600)"></i>Auditorías desde el celular en campo</li>
+                <li style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600)"></i>Reportes exportables a Excel</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- benefits -->
+        <div style="padding:84px 40px; background:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 44px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Por qué elegir SAAF</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0; color:var(--gray-900)">Beneficios que cuidan tu operación</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px">
+            <div style="border-left:3px solid var(--red-600); padding:6px 6px 6px 22px">
+              <div style="color:var(--red-600); margin-bottom:14px"><i data-lucide="life-buoy"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Asesoría constante</h3>
+              <p style="font-size:14.5px; line-height:1.6; color:var(--gray-600); margin:0">Acompañamiento continuo para que aproveches al máximo cada función del sistema.</p>
+            </div>
+            <div style="border-left:3px solid var(--red-600); padding:6px 6px 6px 22px">
+              <div style="color:var(--red-600); margin-bottom:14px"><i data-lucide="shield-check"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Información segura</h3>
+              <p style="font-size:14.5px; line-height:1.6; color:var(--gray-600); margin:0">SSL/HTTPS, cifrado punto a punto y acceso con OAuth2 — el estándar que usan bancos y Google.</p>
+            </div>
+            <div style="border-left:3px solid var(--red-600); padding:6px 6px 6px 22px">
+              <div style="color:var(--red-600); margin-bottom:14px"><i data-lucide="refresh-cw"></i></div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 8px; color:var(--gray-900)">Mejoras constantes</h3>
+              <p style="font-size:14.5px; line-height:1.6; color:var(--gray-600); margin:0">Actualizaciones periódicas que mejoran tu operación, sin costo adicional.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- testimonials -->
+        <div style="padding:84px 40px; background:var(--gray-900); color:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 44px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-400); margin-bottom:12px">Testimonios</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0; color:#fff">Empresas que ya tienen el control</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px">
+            <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:32px">
+              <div style="display:flex; gap:3px; margin-bottom:16px; color:var(--amber-400)"><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i></div>
+              <p style="font-size:16.5px; line-height:1.6; color:#fff; margin:0 0 22px; font-weight:500">"Pasamos de un inventario en Excel imposible de auditar a tener cada activo etiquetado con QR. La conciliación contable ahora toma horas, no semanas."</p>
+              <div style="display:flex; align-items:center; gap:12px">
+                <div style="width:44px; height:44px; border-radius:999px; overflow:hidden; flex:0 0 auto"><image-slot id="b-t1" shape="circle" placeholder="Foto"></image-slot></div>
+                <div><div style="font-size:14px; font-weight:700; color:#fff">Mariana Cortés</div><div style="font-size:13px; color:rgba(255,255,255,.55)">Directora de Finanzas · Grupo Delta</div></div>
+              </div>
+            </div>
+            <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:32px">
+              <div style="display:flex; gap:3px; margin-bottom:16px; color:var(--amber-400)"><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i><i data-lucide="star" style="fill:currentColor"></i></div>
+              <p style="font-size:16.5px; line-height:1.6; color:#fff; margin:0 0 22px; font-weight:500">"La depreciación fiscal se calcula sola y la importación masiva nos dejó operando en un día. El soporte responde de verdad."</p>
+              <div style="display:flex; align-items:center; gap:12px">
+                <div style="width:44px; height:44px; border-radius:999px; overflow:hidden; flex:0 0 auto"><image-slot id="b-t2" shape="circle" placeholder="Foto"></image-slot></div>
+                <div><div style="font-size:14px; font-weight:700; color:#fff">Rodrigo Salas</div><div style="font-size:13px; color:rgba(255,255,255,.55)">Gerente de Activos · Industrias Norte</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- plans -->
+        <div style="padding:84px 40px; background:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 44px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Planes</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 14px; color:var(--gray-900)">Un plan para cada tamaño de empresa</h2>
+            <p style="font-size:16px; color:var(--gray-600); margin:0">Cotización a medida según tu volumen de activos y número de empresas.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch">
+            <div class="plan" style="background:#fff; border:1px solid var(--gray-200); border-radius:18px; padding:32px; display:flex; flex-direction:column; transition:box-shadow .18s">
+              <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:6px">Esencial</div>
+              <div style="font-size:13.5px; color:var(--gray-500); margin-bottom:20px">Para empresas pequeñas que inician su control.</div>
+              <div style="font-size:28px; font-weight:700; color:var(--gray-900); margin-bottom:2px">1 empresa</div>
+              <div style="font-size:13px; color:var(--gray-500); margin-bottom:22px">hasta 500 activos</div>
+              <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:11px; flex:1">
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Registro con QR y código de barras</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Depreciación automática</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Importación masiva</li>
+              </ul>
+              <a href="#b-cta" class="cta-btn" style="text-align:center; background:#fff; color:var(--gray-800); border:1px solid var(--gray-300); font-size:15px; font-weight:600; padding:13px; border-radius:12px">Solicitar demo</a>
+            </div>
+            <div class="plan" style="background:var(--gray-900); border:2px solid var(--red-600); border-radius:18px; padding:32px; display:flex; flex-direction:column; position:relative; box-shadow:0 24px 50px -20px rgba(220,38,38,.5); color:#fff">
+              <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--red-600); color:#fff; font-size:11.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:5px 14px; border-radius:999px">Más elegido</div>
+              <div style="font-size:15px; font-weight:700; color:#fff; margin-bottom:6px">Profesional</div>
+              <div style="font-size:13.5px; color:rgba(255,255,255,.6); margin-bottom:20px">Para empresas medianas en crecimiento.</div>
+              <div style="font-size:28px; font-weight:700; color:#fff; margin-bottom:2px">Hasta 5 empresas</div>
+              <div style="font-size:13px; color:rgba(255,255,255,.6); margin-bottom:22px">activos ilimitados</div>
+              <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:11px; flex:1">
+                <li style="display:flex; gap:9px; font-size:14px; color:rgba(255,255,255,.85)"><i data-lucide="check" style="color:var(--green-500); width:18px;height:18px"></i>Todo lo del plan Esencial</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:rgba(255,255,255,.85)"><i data-lucide="check" style="color:var(--green-500); width:18px;height:18px"></i>Software multiempresa</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:rgba(255,255,255,.85)"><i data-lucide="check" style="color:var(--green-500); width:18px;height:18px"></i>Auditoría móvil en campo</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:rgba(255,255,255,.85)"><i data-lucide="check" style="color:var(--green-500); width:18px;height:18px"></i>Asesoría prioritaria</li>
+              </ul>
+              <a href="#b-cta" class="cta-btn" style="text-align:center; background:var(--red-600); color:#fff; font-size:15px; font-weight:600; padding:13px; border-radius:12px">Solicitar demo</a>
+            </div>
+            <div class="plan" style="background:#fff; border:1px solid var(--gray-200); border-radius:18px; padding:32px; display:flex; flex-direction:column; transition:box-shadow .18s">
+              <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:6px">Corporativo</div>
+              <div style="font-size:13.5px; color:var(--gray-500); margin-bottom:20px">Para grupos y operaciones multinacionales.</div>
+              <div style="font-size:28px; font-weight:700; color:var(--gray-900); margin-bottom:2px">A medida</div>
+              <div style="font-size:13px; color:var(--gray-500); margin-bottom:22px">empresas ilimitadas</div>
+              <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:11px; flex:1">
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Todo lo del plan Profesional</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Integraciones y API</li>
+                <li style="display:flex; gap:9px; font-size:14px; color:var(--gray-700)"><i data-lucide="check" style="color:var(--green-600); width:18px;height:18px"></i>Gerente de cuenta dedicado</li>
+              </ul>
+              <a href="#b-cta" class="cta-btn" style="text-align:center; background:#fff; color:var(--gray-800); border:1px solid var(--gray-300); font-size:15px; font-weight:600; padding:13px; border-radius:12px">Contactar ventas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA band -->
+        <div id="b-cta" style="padding:84px 40px; background:radial-gradient(700px 400px at 50% 0%, rgba(220,38,38,.35), transparent 65%), var(--gray-900); text-align:center; color:#fff">
+          <h2 style="font-size:40px; line-height:1.1; letter-spacing:-.025em; font-weight:700; margin:0 0 16px; color:#fff">¿Listo para llevar el control de tus activos fijos?</h2>
+          <p style="font-size:18px; color:rgba(255,255,255,.8); margin:0 auto 32px; max-width:560px">Agenda una demo en tiempo real y conoce todos los beneficios que el SAAF brinda a tu empresa.</p>
+          <div style="display:flex; gap:14px; justify-content:center">
+            <a href="#b-cta" class="cta-btn" style="background:var(--red-600); color:#fff; font-size:16px; font-weight:700; padding:16px 32px; border-radius:13px; box-shadow:0 10px 30px -8px rgba(220,38,38,.7)">Solicitar demo</a>
+            <a href="#b-cta" class="cta-btn" style="background:rgba(255,255,255,.1); color:#fff; font-size:16px; font-weight:600; padding:16px 32px; border-radius:13px; border:1px solid rgba(255,255,255,.25)">Hablar con un asesor</a>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div style="padding:84px 40px; background:#fff">
+          <div style="text-align:center; max-width:620px; margin:0 auto 40px">
+            <div style="font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); margin-bottom:12px">Preguntas frecuentes</div>
+            <h2 style="font-size:32px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0; color:var(--gray-900)">Resolvemos tus dudas</h2>
+          </div>
+          <div style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px">
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿Para qué empresas funciona el SAAF?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">Para cualquier empresa que necesite llevar un control adecuado de su activo fijo y conocer el estado en el que se encuentran sus activos, sin importar el rubro ni el tamaño.</p>
+            </details>
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿Qué puedo hacer en el SAAF?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">Registrar todos los activos fijos de tu empresa de forma rápida y sencilla, generar sus códigos QR y de barras, calcular su depreciación y auditarlos desde el celular en campo.</p>
+            </details>
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿En qué países tienen presencia?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">El SAAF opera en gran parte de Latinoamérica: México, Chile, Perú, Colombia, Costa Rica, Panamá, Bolivia, Guatemala y Argentina, entre otros.</p>
+            </details>
+            <details style="border:1px solid var(--gray-200); border-radius:12px; padding:18px 22px; background:#fff">
+              <summary style="display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:600; color:var(--gray-900)">¿Qué tan segura está mi información?<span class="faq-plus" style="color:var(--red-600); font-size:22px; font-weight:400">+</span></summary>
+              <p style="margin:14px 0 0; font-size:15px; line-height:1.6; color:var(--gray-600)">Usamos certificado SSL para HTTPS, cifrado punto a punto y acceso mediante token OAuth2 — el mismo estándar que emplean bancos y grandes plataformas. Además exigimos contraseñas alfanuméricas.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <footer style="padding:56px 40px 40px; background:#0a0f1a; color:var(--gray-400)">
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px">
+            <div>
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+                <div style="width:32px; height:32px; border-radius:9px; background:var(--red-600); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px">S</div>
+                <span style="font-weight:700; font-size:18px; color:#fff">SAAF</span>
+              </div>
+              <p style="font-size:14px; line-height:1.6; color:var(--gray-400); margin:0 0 16px; max-width:280px">La administración de activos fijos más fácil y rápida de Latinoamérica.</p>
+              <div style="font-size:13.5px; line-height:1.8"><div>Enrique Rébsamen 512, CDMX</div><a href="#1b" style="color:var(--red-400) !important; font-weight:600">(+52) 55-7047-1421</a></div>
+            </div>
+            <div><div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:14px">Producto</div><div style="display:flex; flex-direction:column; gap:9px; font-size:14px"><a href="#1b" style="color:var(--gray-400) !important">Características</a><a href="#1b" style="color:var(--gray-400) !important">Planes</a><a href="#1b" style="color:var(--gray-400) !important">Demo</a></div></div>
+            <div><div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:14px">Empresa</div><div style="display:flex; flex-direction:column; gap:9px; font-size:14px"><a href="#1b" style="color:var(--gray-400) !important">¿Quiénes somos?</a><a href="#1b" style="color:var(--gray-400) !important">Blog</a><a href="#1b" style="color:var(--gray-400) !important">Bolsa de trabajo</a></div></div>
+            <div><div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:14px">Contacto</div><div style="display:flex; flex-direction:column; gap:9px; font-size:14px"><a href="#1b" style="color:var(--gray-400) !important">Solicitar demo</a><a href="#1b" style="color:var(--gray-400) !important">Hablar con un asesor</a></div></div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.1); padding-top:22px; font-size:13px; color:var(--gray-500)">© 2026 SAAF · Software Activo Fijo. Todos los derechos reservados.</div>
+        </footer>
+
+      </div>
+    </div>
+
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._renderIcons();
+  }
+  componentDidUpdate() {
+    this._renderIcons();
+  }
+  _renderIcons() {
+    const go = () => { if (window.lucide && window.lucide.createIcons) window.lucide.createIcons(); };
+    go();
+    // lucide may still be loading from CDN when we first mount
+    setTimeout(go, 300);
+    setTimeout(go, 1000);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

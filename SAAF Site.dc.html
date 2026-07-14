@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0B1424"/><text x="100" y="112" font-family="sans-serif" font-size="42" font-weight="700" fill="#4E9BF5" text-anchor="middle">S</text></svg></template>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/aval-os-latam-design-system-d0758eaf-d469-44e2-b04f-0ad30a3d31f2/colors_and_type.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0}
+  .app{font-family:'Inter',sans-serif}
+  .disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .wm{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em}
+  .lnk{cursor:pointer;transition:color .16s}
+  .btn{cursor:pointer;transition:transform .16s cubic-bezier(.16,1,.3,1),box-shadow .2s,background-color .2s,border-color .2s,color .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0)}
+  .card{transition:transform .24s cubic-bezier(.16,1,.3,1),border-color .24s,background-color .24s,box-shadow .24s}
+  .lift:hover{transform:translateY(-6px)}
+  .rvl{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .rvl.in{opacity:1;transform:none}
+  details>summary{list-style:none;cursor:pointer}
+  details>summary::-webkit-details-marker{display:none}
+  details[open] .fp{transform:rotate(45deg)}
+  .fp{transition:transform .2s ease}
+  [data-lucide]{width:20px;height:20px;stroke-width:1.75}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes floaty2{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes glow{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.9;transform:scale(1.08)}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(78,155,245,.5)}70%{box-shadow:0 0 0 14px rgba(78,155,245,0)}100%{box-shadow:0 0 0 0 rgba(78,155,245,0)}}
+  @keyframes flowdot{0%{left:2%;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:98%;opacity:0}}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @keyframes dash{to{stroke-dashoffset:0}}
+  @keyframes sheen{0%{background-position:200% 0}100%{background-position:-200% 0}}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .marq{display:flex;gap:44px;width:max-content;animation:marquee 30s linear infinite}
+  .gborder{position:relative;background:linear-gradient(135deg,var(--accent),var(--accent2));background-size:200% 200%}
+  .navlink:hover{color:var(--text)!important}
+  .navlink:hover .nudot{opacity:1!important}
+  .tdark{--bg:#070C16;--bg2:#0B1424;--navbg:rgba(9,14,24,.72);--surface:rgba(255,255,255,.045);--surface2:rgba(255,255,255,.07);--panel:rgba(255,255,255,.035);--panel2:rgba(255,255,255,.05);--panel3:rgba(255,255,255,.03);--border:rgba(255,255,255,.10);--text:#EAF0FA;--text2:rgba(234,240,250,.66);--text3:rgba(234,240,250,.40);--accent:#4E86C7;--accent2:#9BC1E6;--onaccent:#04101E;--glow:rgba(78,134,199,.45);--glow2:rgba(155,193,230,.26);--barlow:rgba(255,255,255,.09);--ctabg:#0B1424}
+  .v{display:none}
+  .show-home .v-home,.show-quienes .v-quienes,.show-caracteristicas .v-caracteristicas,.show-planes .v-planes,.show-blog .v-blog,.show-bolsa .v-bolsa,.show-contacto .v-contacto{display:block}
+  .exportall .v{display:block!important}
+  .tlight{--bg:#F5F8FC;--bg2:#ECF1F8;--navbg:rgba(245,248,252,.82);--surface:#FFFFFF;--surface2:#FFFFFF;--panel:#FFFFFF;--panel2:#F3F7FC;--panel3:#F7FAFD;--border:#E1E8F2;--text:#0C2340;--text2:#47576A;--text3:#8A97A8;--accent:#2F66B5;--accent2:#4E82AB;--onaccent:#FFFFFF;--glow:rgba(47,102,181,.22);--glow2:rgba(78,130,171,.16);--barlow:#E6EDF6;--ctabg:#FFFFFF}
+</style>
+</helmet>
+
+<div class="app {{ themeClass }}" style="width:1280px;margin:0 auto;background:var(--bg);color:var(--text);position:relative;overflow:hidden;transition:background-color .3s">
+
+  <!-- ambient background -->
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0">
+    <div style="position:absolute;top:-160px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 66%);animation:glow 9s ease-in-out infinite"></div>
+    <div style="position:absolute;top:520px;left:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--glow2),transparent 66%);animation:glow 11s ease-in-out infinite 2s"></div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:var(--navbg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)">
+    <span class="lnk" onClick="{{ go.home }}" style="display:inline-flex;align-items:center;gap:11px">
+      <span style="display:flex;flex-direction:column;gap:3px;width:42px">
+        <span style="display:flex;gap:4px;height:12px"><span style="flex:1;border-radius:99px;background:var(--accent)"></span><span style="width:12px;border-radius:99px;background:var(--accent2)"></span></span>
+        <span style="display:flex;gap:4px;height:12px"><span style="width:12px;border-radius:99px;background:var(--accent2)"></span><span style="flex:1;border-radius:99px;background:var(--accent)"></span></span>
+      </span>
+      <span class="wm" style="font-size:24px;color:var(--text)">saaf</span>
+    </span>
+    <nav style="display:flex;gap:6px;align-items:center">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+        <span class="lnk navlink" onClick="{{ item.onClick }}" style="{{ item.style }}">{{ item.label }}<span class="nudot" style="{{ item.dotStyle }}"></span></span>
+      </sc-for>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="lnk btn" onClick="{{ toggleTheme }}" title="Cambiar tema" style="width:38px;height:38px;justify-content:center;border-radius:11px;border:1px solid var(--border);color:var(--text2);background:var(--surface)"><i data-lucide="{{ themeIcon }}"></i></span>
+      <span class="btn" onClick="{{ go.contacto }}" style="font-size:14px;font-weight:600;color:var(--onaccent);padding:11px 20px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 8px 22px -10px var(--glow)">Solicitar demo</span>
+    </div>
+  </header>
+
+  <main class="{{ viewClass }}" style="position:relative;z-index:1">
+  <div class="views">
+
+    <!-- ================= HOME ================= -->
+    <div class="v v-home" data-document-role="page" data-label="Inicio">
+      <!-- hero -->
+      <section style="padding:84px 40px 72px;position:relative">
+        <div style="max-width:1120px;margin:0 auto;text-align:center">
+          <div class="rvl in" style="display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--border);color:var(--text2);font-size:12.5px;font-weight:500;padding:8px 15px;border-radius:999px;margin-bottom:28px"><span class="mono" style="color:var(--accent2);font-weight:600">SAAF</span><span style="width:4px;height:4px;border-radius:99px;background:var(--text3)"></span>Control inteligente de activo fijo · LATAM</div>
+          <h1 class="rvl in disp" style="font-size:64px;line-height:1.02;font-weight:700;margin:0 auto 22px;max-width:900px;color:var(--text)">La administración de activos fijos<br>más <span style="background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">fácil y rápida</span></h1>
+          <p class="rvl in" style="font-size:19px;line-height:1.55;color:var(--text2);margin:0 auto 34px;max-width:600px">SAAF lleva al corriente el estado y la ubicación de cada activo de tu empresa. Regístralos, etiquétalos con QR, calcula su depreciación y contrólalos — todo en una interfaz amigable.</p>
+          <div class="rvl in" style="display:flex;gap:13px;justify-content:center;margin-bottom:20px">
+            <span class="btn" onClick="{{ go.contacto }}" style="font-size:16px;font-weight:700;color:var(--onaccent);padding:16px 30px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 16px 34px -12px var(--glow)">Solicitar demo<i data-lucide="arrow-right" style="width:18px;height:18px"></i></span>
+            <span class="btn" onClick="{{ go.caracteristicas }}" style="font-size:16px;font-weight:600;color:var(--text);padding:16px 28px;border-radius:14px;background:var(--surface);border:1px solid var(--border)">Ver características</span>
+          </div>
+        </div>
+
+        <!-- hero product panel -->
+        <div class="rvl in" style="max-width:1060px;margin:56px auto 0;position:relative">
+          <div style="position:absolute;top:-56px;left:-20px;z-index:4;background:var(--surface2);border:1px solid var(--border);backdrop-filter:blur(12px);border-radius:13px;padding:11px 15px;display:flex;align-items:center;gap:9px;animation:floaty 6s ease-in-out infinite;box-shadow:0 18px 36px -18px rgba(0,0,0,.5)"><span style="width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);display:flex;align-items:center;justify-content:center"><i data-lucide="qr-code" style="width:16px;height:16px"></i></span><div style="text-align:left"><div style="font-size:12.5px;font-weight:700;color:var(--text)">QR generado</div><div class="mono" style="font-size:10.5px;color:var(--text3)">AF-0421</div></div></div>
+          <div style="position:absolute;bottom:-16px;right:-12px;z-index:4;background:var(--surface2);border:1px solid var(--border);backdrop-filter:blur(12px);border-radius:13px;padding:11px 15px;display:flex;align-items:center;gap:9px;animation:floaty2 5.5s ease-in-out infinite .7s;box-shadow:0 18px 36px -18px rgba(0,0,0,.5)"><i data-lucide="shield-check" style="color:#22C55E"></i><span style="font-size:12.5px;font-weight:700;color:var(--text)">Acceso OAuth2</span></div>
+          <div style="border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--panel);box-shadow:0 50px 100px -40px rgba(0,0,0,.7)">
+            <div style="display:flex;align-items:center;gap:7px;padding:13px 16px;background:var(--panel2);border-bottom:1px solid var(--border)"><span style="width:10px;height:10px;border-radius:99px;background:#e06c6c"></span><span style="width:10px;height:10px;border-radius:99px;background:#e5b95b"></span><span style="width:10px;height:10px;border-radius:99px;background:#63c07a"></span><span class="mono" style="margin-left:10px;font-size:11.5px;color:var(--text3)">app.saaf.com/panel</span></div>
+            <div style="display:grid;grid-template-columns:210px 1fr">
+              <div style="background:var(--panel3);padding:18px 14px;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--border)">
+                <div class="mono" style="color:var(--text3);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 8px 8px">Menú</div>
+                <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);font-size:13px;font-weight:600"><i data-lucide="layout-dashboard" style="width:16px;height:16px"></i>Panel</div>
+                <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:var(--text2);font-size:13px"><i data-lucide="boxes" style="width:16px;height:16px"></i>Activos</div>
+                <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:var(--text2);font-size:13px"><i data-lucide="building-2" style="width:16px;height:16px"></i>Empresas</div>
+                <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:var(--text2);font-size:13px"><i data-lucide="trending-down" style="width:16px;height:16px"></i>Depreciación</div>
+                <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:var(--text2);font-size:13px"><i data-lucide="file-bar-chart" style="width:16px;height:16px"></i>Reportes</div>
+              </div>
+              <div style="padding:22px 24px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px"><div class="disp" style="font-size:17px;font-weight:600;color:var(--text)">Panel de activos</div><span class="mono" style="font-size:11px;color:var(--onaccent);background:#22C55E;padding:3px 9px;border-radius:999px;font-weight:600">EN LÍNEA</span></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px">
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px"><div class="mono" style="font-size:10px;color:var(--text3);margin-bottom:6px">ACTIVOS</div><div class="disp" style="font-size:21px;font-weight:600;color:var(--text)" data-count="1284">1,284</div></div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px"><div class="mono" style="font-size:10px;color:var(--text3);margin-bottom:6px">VALOR</div><div class="disp" style="font-size:21px;font-weight:600;color:var(--text)">$4.2M</div></div>
+                  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px"><div class="mono" style="font-size:10px;color:var(--text3);margin-bottom:6px">EMPRESAS</div><div class="disp" style="font-size:21px;font-weight:600;color:var(--text)">5</div></div>
+                  <div style="background:linear-gradient(135deg,rgba(78,155,245,.16),rgba(56,224,200,.16));border:1px solid var(--border);border-radius:12px;padding:13px"><div class="mono" style="font-size:10px;color:var(--accent2);margin-bottom:6px">POR AUDITAR</div><div class="disp" style="font-size:21px;font-weight:600;color:var(--accent2)" data-count="37">37</div></div>
+                </div>
+                <div style="display:flex;align-items:flex-end;gap:9px;height:104px;border-top:1px solid var(--border);padding-top:16px">
+                  <div style="flex:1;height:45%;background:var(--barlow);border-radius:5px 5px 0 0"></div><div style="flex:1;height:62%;background:var(--barlow);border-radius:5px 5px 0 0"></div><div style="flex:1;height:52%;background:var(--barlow);border-radius:5px 5px 0 0"></div><div style="flex:1;height:82%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:5px 5px 0 0"></div><div style="flex:1;height:68%;background:var(--barlow);border-radius:5px 5px 0 0"></div><div style="flex:1;height:95%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:5px 5px 0 0"></div><div style="flex:1;height:58%;background:var(--barlow);border-radius:5px 5px 0 0"></div><div style="flex:1;height:74%;background:var(--barlow);border-radius:5px 5px 0 0"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- marquee países -->
+      <section style="padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--surface)">
+        <div style="text-align:center;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:14px" class="mono">Presencia en toda Latinoamérica</div>
+        <div style="overflow:hidden"><div class="marq">
+          <sc-for list="{{ paisesLoop }}" as="p" hint-placeholder-count="18"><span class="disp" style="font-size:18px;font-weight:600;color:var(--text2)">{{ p }}</span><span style="color:var(--accent2)">◆</span></sc-for>
+        </div></div>
+      </section>
+
+      <!-- doc-flow pipeline -->
+      <section style="padding:92px 40px">
+        <div style="max-width:1120px;margin:0 auto">
+          <div class="rvl" style="text-align:center;max-width:660px;margin:0 auto 54px">
+            <div class="mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px">Cómo funciona</div>
+            <h2 class="disp" style="font-size:40px;line-height:1.1;font-weight:700;margin:0 0 14px;color:var(--text)">Del documento al control, en un flujo</h2>
+            <p style="font-size:16.5px;color:var(--text2);margin:0">Importa, etiqueta y controla. SAAF automatiza cada paso desde que registras un activo hasta que consultas su depreciación.</p>
+          </div>
+          <div class="rvl" style="position:relative;background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:38px 30px;overflow:hidden">
+            <div style="position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent)"></div>
+            <div style="position:absolute;top:calc(50% - 5px);width:10px;height:10px;border-radius:99px;background:var(--accent2);box-shadow:0 0 16px 3px var(--accent2);animation:flowdot 5s linear infinite"></div>
+            <div style="position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+              <sc-for list="{{ pipeline }}" as="st" hint-placeholder-count="5">
+                <div style="text-align:center">
+                  <div style="width:58px;height:58px;margin:0 auto 14px;border-radius:16px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent);position:relative;z-index:1"><i data-lucide="{{ st.icon }}" style="width:24px;height:24px"></i></div>
+                  <div class="mono" style="font-size:10.5px;color:var(--text3);margin-bottom:4px">{{ st.step }}</div>
+                  <div style="font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:5px">{{ st.title }}</div>
+                  <div style="font-size:12.5px;line-height:1.5;color:var(--text2)">{{ st.desc }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- bento features -->
+      <section style="padding:20px 40px 92px">
+        <div style="max-width:1120px;margin:0 auto">
+          <div class="rvl" style="max-width:640px;margin:0 auto 46px;text-align:center">
+            <div class="mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px">Funciones del SAAF</div>
+            <h2 class="disp" style="font-size:40px;line-height:1.1;font-weight:700;margin:0;color:var(--text)">Una plataforma, todo el control</h2>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-auto-rows:1fr;gap:16px">
+            <div class="card lift rvl" style="grid-row:span 2;background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column">
+              <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);display:flex;align-items:center;justify-content:center;margin-bottom:20px"><i data-lucide="building-2" style="width:25px;height:25px"></i></div>
+              <h3 class="disp" style="font-size:22px;font-weight:600;margin:0 0 10px;color:var(--text)">Software multiempresa</h3>
+              <p style="font-size:15px;line-height:1.6;color:var(--text2);margin:0 0 24px">Permite visualizar la información general de todos los activos fijos registrados en el sistema, consolidando varias empresas en un solo panel.</p>
+              <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 13px;background:var(--surface);border:1px solid var(--border);border-radius:11px"><span style="width:8px;height:8px;border-radius:99px;background:#22C55E"></span><span style="flex:1;font-size:13px;color:var(--text)">Grupo Delta</span><span class="mono" style="font-size:11px;color:var(--text3)">842 activos</span></div>
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 13px;background:var(--surface);border:1px solid var(--border);border-radius:11px"><span style="width:8px;height:8px;border-radius:99px;background:#22C55E"></span><span style="flex:1;font-size:13px;color:var(--text)">Industrias Norte</span><span class="mono" style="font-size:11px;color:var(--text3)">406 activos</span></div>
+              </div>
+            </div>
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:28px;transition-delay:.05s"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i data-lucide="qr-code" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Dashboard amigable</h3><p style="font-size:14px;line-height:1.55;color:var(--text2);margin:0">Registra activos y genera automáticamente su código de barras y su QR, que guarda la URL a la ficha del activo.</p></div>
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:28px;transition-delay:.1s"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i data-lucide="package-plus" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Alta de activo fijo</h3><p style="font-size:14px;line-height:1.55;color:var(--text2);margin:0">Da de alta los activos fijos de tu empresa de forma rápida y sencilla dentro del software.</p></div>
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:28px;transition-delay:.05s"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i data-lucide="trending-down" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Cálculo de depreciación</h3><p style="font-size:14px;line-height:1.55;color:var(--text2);margin:0">Calcula la depreciación fiscal y financiera de cada activo fijo de manera automática.</p></div>
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:28px;transition-delay:.1s"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i data-lucide="cloud-upload" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Importación masiva</h3><p style="font-size:14px;line-height:1.55;color:var(--text2);margin:0">Importa de forma rápida los datos de tus activos a través de una plantilla dentro del software.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- depreciation showcase -->
+      <section style="padding:0 40px 92px">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:24px;padding:48px">
+          <div class="rvl">
+            <div class="mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px">Depreciación automática</div>
+            <h2 class="disp" style="font-size:32px;line-height:1.14;font-weight:700;margin:0 0 16px;color:var(--text)">Fiscal y financiera, calculada sola</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--text2);margin:0 0 24px">Olvídate de las hojas de cálculo. SAAF proyecta la pérdida de valor de cada activo con métodos fiscales y financieros, y te muestra el valor en libros en tiempo real.</p>
+            <div style="display:flex;gap:26px">
+              <div><div class="disp" style="font-size:26px;font-weight:600;color:var(--text)">$4.2M</div><div style="font-size:12.5px;color:var(--text3)">valor en libros</div></div>
+              <div><div class="disp" style="font-size:26px;font-weight:600;color:var(--accent2)">−12.4%</div><div style="font-size:12.5px;color:var(--text3)">depreciación anual</div></div>
+            </div>
+          </div>
+          <div class="rvl" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;transition-delay:.08s">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px"><span style="font-size:14px;font-weight:700;color:var(--text)">Curva de depreciación</span><span class="mono" style="font-size:11px;color:var(--text3)">2021 — 2026</span></div>
+            <div style="display:flex;align-items:flex-end;gap:12px;height:150px">
+              <div style="flex:1;height:96%;background:linear-gradient(180deg,var(--accent),transparent);border-radius:6px 6px 0 0;position:relative"><span class="mono" style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--text3)">100%</span></div>
+              <div style="flex:1;height:80%;background:linear-gradient(180deg,var(--accent),transparent);border-radius:6px 6px 0 0"></div>
+              <div style="flex:1;height:64%;background:linear-gradient(180deg,var(--accent),transparent);border-radius:6px 6px 0 0"></div>
+              <div style="flex:1;height:48%;background:linear-gradient(180deg,var(--accent2),transparent);border-radius:6px 6px 0 0"></div>
+              <div style="flex:1;height:33%;background:linear-gradient(180deg,var(--accent2),transparent);border-radius:6px 6px 0 0"></div>
+              <div style="flex:1;height:20%;background:linear-gradient(180deg,var(--accent2),transparent);border-radius:6px 6px 0 0;position:relative"><span class="mono" style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--accent2)">21%</span></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:10px" class="mono"><span style="font-size:10px;color:var(--text3)">'21</span><span style="font-size:10px;color:var(--text3)">'22</span><span style="font-size:10px;color:var(--text3)">'23</span><span style="font-size:10px;color:var(--text3)">'24</span><span style="font-size:10px;color:var(--text3)">'25</span><span style="font-size:10px;color:var(--text3)">'26</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- benefits + stats -->
+      <section style="padding:0 40px 92px">
+        <div style="max-width:1120px;margin:0 auto">
+          <div class="rvl" style="text-align:center;max-width:620px;margin:0 auto 46px"><div class="mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px">Por qué SAAF</div><h2 class="disp" style="font-size:36px;line-height:1.12;font-weight:700;margin:0;color:var(--text)">Beneficios que cuidan tu operación</h2></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px">
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i data-lucide="life-buoy" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Asesoría constante</h3><p style="font-size:14px;line-height:1.6;color:var(--text2);margin:0">Recibes asesoría continua para conocer más del SAAF y aprovechar al máximo cada función.</p></div>
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px;transition-delay:.06s"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i data-lucide="shield-check" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Información segura</h3><p style="font-size:14px;line-height:1.6;color:var(--text2);margin:0">Certificado SSL, cifrado punto a punto y acceso mediante token OAuth2, usado por Google y sistemas bancarios.</p></div>
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px;transition-delay:.12s"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i data-lucide="refresh-cw" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">Mejoras constantes</h3><p style="font-size:14px;line-height:1.6;color:var(--text2);margin:0">Trabajamos siempre en mejoras del software; recibes actualizaciones para tener mejores resultados.</p></div>
+          </div>
+          <div class="rvl gborder" style="border-radius:20px;padding:1px">
+            <div style="border-radius:19px;background:var(--panel);padding:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
+              <div><div class="disp" style="font-size:40px;font-weight:600;color:var(--text)" data-count="1284">1,284</div><div style="font-size:13px;color:var(--text3);margin-top:4px">activos gestionados</div></div>
+              <div><div class="disp" style="font-size:40px;font-weight:600;color:var(--text)" data-count="9" data-suffix="+">9+</div><div style="font-size:13px;color:var(--text3);margin-top:4px">países LATAM</div></div>
+              <div><div class="disp" style="font-size:40px;font-weight:600;color:var(--text)">OAuth2</div><div style="font-size:13px;color:var(--text3);margin-top:4px">acceso seguro</div></div>
+              <div><div class="disp" style="font-size:40px;font-weight:600;color:var(--text)">24/7</div><div style="font-size:13px;color:var(--text3);margin-top:4px">datos disponibles</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- testimonial -->
+      <section style="padding:0 40px 92px">
+        <div class="rvl" style="max-width:900px;margin:0 auto;text-align:center;background:var(--panel);border:1px solid var(--border);border-radius:24px;padding:56px 48px">
+          <div style="display:flex;gap:4px;justify-content:center;margin-bottom:22px;color:#F5B301"><i data-lucide="star" style="fill:currentColor;stroke:none"></i><i data-lucide="star" style="fill:currentColor;stroke:none"></i><i data-lucide="star" style="fill:currentColor;stroke:none"></i><i data-lucide="star" style="fill:currentColor;stroke:none"></i><i data-lucide="star" style="fill:currentColor;stroke:none"></i></div>
+          <p class="disp" style="font-size:26px;line-height:1.4;font-weight:500;color:var(--text);margin:0 0 26px">"Pasamos de un inventario en Excel imposible de auditar a tener cada activo etiquetado con QR. La conciliación contable ahora toma horas, no semanas."</p>
+          <div style="display:flex;align-items:center;gap:13px;justify-content:center"><div style="width:48px;height:48px;border-radius:99px;overflow:hidden"><image-slot id="h-t1" shape="circle" placeholder="Foto"></image-slot></div><div style="text-align:left"><div style="font-size:14.5px;font-weight:700;color:var(--text)">Mariana Cortés</div><div style="font-size:13px;color:var(--text3)">Directora de Finanzas · Grupo Delta</div></div></div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="padding:0 40px 100px">
+        <div class="rvl gborder" style="max-width:1120px;margin:0 auto;border-radius:26px;padding:1px">
+          <div style="border-radius:25px;background:var(--ctabg);padding:66px 48px;text-align:center;position:relative;overflow:hidden">
+            <h2 class="disp" style="font-size:40px;line-height:1.08;font-weight:700;margin:0 0 16px;color:var(--text)">¿Listo para llevar el control de activos fijos?</h2>
+            <p style="font-size:18px;color:var(--text2);margin:0 auto 32px;max-width:560px">Agenda una demo en tiempo real y conoce todos los beneficios que el SAAF brinda a tu empresa.</p>
+            <div style="display:flex;gap:14px;justify-content:center"><span class="btn" onClick="{{ go.contacto }}" style="background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);font-size:16px;font-weight:700;padding:16px 32px;border-radius:14px;box-shadow:0 16px 34px -12px var(--glow)">Solicitar demo</span><span class="btn" onClick="{{ go.contacto }}" style="background:var(--surface);color:var(--text);font-size:16px;font-weight:600;padding:16px 32px;border-radius:14px;border:1px solid var(--border)">Hablar con un asesor</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= CARACTERISTICAS ================= -->
+    <div class="v v-caracteristicas" data-document-role="page" data-label="Características">
+      <section style="padding:76px 40px 48px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Características</div>
+        <h1 class="rvl in disp" style="font-size:52px;line-height:1.05;font-weight:700;margin:0 auto 18px;max-width:840px;color:var(--text)">¿Cuáles son las características de SAAF?</h1>
+        <p class="rvl in" style="font-size:18px;line-height:1.55;color:var(--text2);margin:0 auto;max-width:640px">Con toda tu información generas reportes de tus operaciones en tiempo real y defines quién puede gestionarlas. El control aumenta, los costos disminuyen.</p>
+      </section>
+      <section style="padding:0 40px 80px">
+        <div style="max-width:1120px;margin:0 auto;background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:44px">
+          <div class="rvl" style="display:flex;align-items:center;gap:12px;margin-bottom:26px"><span style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);display:flex;align-items:center;justify-content:center"><i data-lucide="settings-2"></i></span><h2 class="disp" style="font-size:26px;font-weight:600;margin:0;color:var(--text)">Funciones administrativas</h2></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 28px">
+            <sc-for list="{{ caractFunciones }}" as="f" hint-placeholder-count="12"><div class="rvl" style="display:flex;gap:11px;align-items:flex-start"><i data-lucide="check-circle-2" style="color:var(--accent2);width:19px;height:19px;flex:0 0 auto;margin-top:1px"></i><span style="font-size:14.5px;line-height:1.5;color:var(--text)">{{ f }}</span></div></sc-for>
+          </div>
+        </div>
+      </section>
+      <section style="padding:0 40px 84px">
+        <div style="max-width:1120px;margin:0 auto">
+          <div class="rvl" style="text-align:center;max-width:620px;margin:0 auto 44px"><div class="mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px">Ventajas competitivas</div><h2 class="disp" style="font-size:34px;font-weight:700;margin:0 0 12px;color:var(--text)">Lleva tu empresa al siguiente nivel</h2><p style="font-size:15.5px;color:var(--text2);margin:0">Las cualidades que hacen de SAAF una herramienta única.</p></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+            <sc-for list="{{ ventajas }}" as="v" hint-placeholder-count="4">
+              <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:26px"><div style="width:46px;height:46px;border-radius:12px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i data-lucide="{{ v.icon }}" style="width:22px;height:22px"></i></div><h3 style="font-size:17px;font-weight:700;margin:0 0 12px;color:var(--text)">{{ v.title }}</h3><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px"><sc-for list="{{ v.items }}" as="it" hint-placeholder-count="3"><li style="display:flex;gap:8px;font-size:13px;line-height:1.45;color:var(--text2)"><i data-lucide="check" style="color:var(--accent2);width:15px;height:15px;flex:0 0 auto;margin-top:2px"></i>{{ it }}</li></sc-for></ul></div>
+            </sc-for>
+          </div>
+          <p class="rvl" style="text-align:center;font-size:14.5px;color:var(--text2);margin:28px auto 0;max-width:720px">Compatible para trabajar en conjunto con cualquier otro software, para un mejor control de todas las tareas y funciones de la empresa.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= PLANES ================= -->
+    <div class="v v-planes" data-document-role="page" data-label="Planes">
+      <section style="padding:76px 40px 48px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Planes</div>
+        <h1 class="rvl in disp" style="font-size:52px;line-height:1.05;font-weight:700;margin:0 auto 18px;max-width:760px;color:var(--text)">Un plan para cada tamaño de empresa</h1>
+        <p class="rvl in" style="font-size:18px;line-height:1.55;color:var(--text2);margin:0 auto;max-width:600px">Contrata el que más te convenga o habla con un asesor y solicita una demo para conocer los beneficios del SAAF.</p>
+      </section>
+      <section style="padding:0 40px 90px">
+        <div style="max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch">
+          <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:34px;display:flex;flex-direction:column">
+            <div class="mono" style="font-size:11px;color:var(--accent2);margin-bottom:8px">PAQUETE</div>
+            <h3 class="disp" style="font-size:22px;font-weight:600;margin:0 0 6px;color:var(--text)">PyME</h3>
+            <p style="font-size:13.5px;color:var(--text2);margin:0 0 18px">Ideal para empresas con hasta 100 activos.</p>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:20px"><span class="disp" style="font-size:38px;font-weight:600;color:var(--text)">$9.99</span><span style="font-size:14px;color:var(--text2)">USD /mensual</span></div>
+            <ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;flex:1"><sc-for list="{{ planItems }}" as="p" hint-placeholder-count="12"><li style="display:flex;gap:7px;font-size:12.5px;color:var(--text)"><i data-lucide="check" style="color:var(--accent2);width:15px;height:15px;flex:0 0 auto;margin-top:1px"></i>{{ p }}</li></sc-for></ul>
+            <span class="btn" onClick="{{ go.contacto }}" style="justify-content:center;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:15px;font-weight:600;padding:13px;border-radius:12px">Solicitar demo</span>
+          </div>
+          <div class="card lift rvl gborder" style="border-radius:20px;padding:1px;transition-delay:.06s">
+            <div style="border-radius:19px;background:var(--panel);padding:34px;display:flex;flex-direction:column;height:100%">
+              <div class="mono" style="font-size:11px;color:var(--accent2);margin-bottom:8px">PAQUETE · RECOMENDADO</div>
+              <h3 class="disp" style="font-size:22px;font-weight:600;margin:0 0 6px;color:var(--text)">Empresas</h3>
+              <p style="font-size:13.5px;color:var(--text2);margin:0 0 18px">Ideal para empresas con hasta 500 activos.</p>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:20px"><span class="disp" style="font-size:38px;font-weight:600;color:var(--text)">Cotizar</span></div>
+              <ul style="list-style:none;padding:0;margin:0 0 24px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;flex:1"><sc-for list="{{ planItems }}" as="p" hint-placeholder-count="12"><li style="display:flex;gap:7px;font-size:12.5px;color:var(--text)"><i data-lucide="check" style="color:var(--accent2);width:15px;height:15px;flex:0 0 auto;margin-top:1px"></i>{{ p }}</li></sc-for></ul>
+              <span class="btn" onClick="{{ go.contacto }}" style="justify-content:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);font-size:15px;font-weight:700;padding:13px;border-radius:12px">Solicitar cotización</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= BOLSA DE TRABAJO ================= -->
+    <div class="v v-bolsa" data-document-role="page" data-label="Bolsa de Trabajo">
+      <section style="padding:76px 40px 48px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Bolsa de Trabajo</div>
+        <h1 class="rvl in disp" style="font-size:50px;line-height:1.06;font-weight:700;margin:0 auto 18px;max-width:760px;color:var(--text)">¿Estás buscando empleo? Únete a nuestro equipo</h1>
+        <p class="rvl in" style="font-size:18px;line-height:1.55;color:var(--text2);margin:0 auto;max-width:660px">Déjanos tus datos y, en caso de tener una vacante disponible, nos pondremos en contacto contigo.</p>
+      </section>
+      <section style="padding:0 40px 96px">
+        <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:start">
+          <div class="rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:36px">
+            <h3 class="disp" style="font-size:20px;font-weight:600;margin:0 0 20px;color:var(--text)">Mándanos tus datos</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+              <div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Nombre</label><input placeholder="Nombre" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+              <div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Apellido</label><input placeholder="Apellido" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            </div>
+            <div style="margin-bottom:12px"><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Correo electrónico</label><input type="email" placeholder="tu@correo.com" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+              <div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Teléfono</label><input placeholder="(+52) 55 0000 0000" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+              <div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Ciudad</label><input placeholder="Ciudad" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+              <div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">C.P.</label><input placeholder="Código postal" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+              <div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Escolaridad</label><input placeholder="Grado de escolaridad" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            </div>
+            <div style="margin-bottom:12px"><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Dirección</label><input placeholder="Dirección" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            <div style="margin-bottom:20px"><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Adjunta tu currículum</label><div style="display:flex;align-items:center;gap:11px;padding:13px;border:1px dashed var(--border);border-radius:11px;color:var(--text2);font-size:13px"><i data-lucide="paperclip" style="width:17px;height:17px;color:var(--accent)"></i>Selecciona un archivo (PDF, DOC)</div></div>
+            <button class="btn" style="width:100%;justify-content:center;border:none;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);font-size:15px;font-weight:700;padding:15px;border-radius:12px;font-family:inherit;box-shadow:0 12px 28px -12px var(--glow)">Enviar solicitud</button>
+          </div>
+          <div class="rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:30px;transition-delay:.06s">
+            <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i data-lucide="users"></i></div>
+            <h3 class="disp" style="font-size:19px;font-weight:600;margin:0 0 8px;color:var(--text)">Áreas que buscamos</h3>
+            <p style="font-size:13.5px;line-height:1.55;color:var(--text2);margin:0 0 18px">Sumamos talento en distintas disciplinas técnicas y profesionales.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ bolsaAreas }}" as="a" hint-placeholder-count="5"><span style="font-size:13px;font-weight:500;color:var(--text);background:var(--surface);border:1px solid var(--border);padding:8px 13px;border-radius:999px">{{ a }}</span></sc-for></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= INTEGRACIONES ================= -->
+    <div class="v v-integraciones" data-document-role="page" data-label="Integraciones">
+      <section style="padding:76px 40px 56px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Integraciones</div>
+        <h1 class="rvl in disp" style="font-size:52px;line-height:1.05;font-weight:700;margin:0 auto 18px;max-width:820px;color:var(--text)">Conecta SAAF con tu forma de trabajar</h1>
+        <p class="rvl in" style="font-size:18px;line-height:1.55;color:var(--text2);margin:0 auto;max-width:600px">Importa tu inventario, exporta reportes y captura activos en campo con las herramientas que ya usas.</p>
+      </section>
+
+      <section style="padding:0 40px 80px">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+          <sc-for list="{{ integraciones }}" as="ig" hint-placeholder-count="8">
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center"><div style="width:50px;height:50px;margin:0 auto 14px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center"><i data-lucide="{{ ig.icon }}" style="width:24px;height:24px"></i></div><div style="font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:5px">{{ ig.title }}</div><div style="font-size:12.5px;line-height:1.5;color:var(--text2)">{{ ig.desc }}</div></div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="padding:0 40px 96px">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:44px">
+          <div class="rvl">
+            <div class="mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px">Importación masiva</div>
+            <h2 class="disp" style="font-size:30px;line-height:1.14;font-weight:700;margin:0 0 14px;color:var(--text)">De tu Excel al sistema, en minutos</h2>
+            <p style="font-size:15.5px;line-height:1.6;color:var(--text2);margin:0">Descarga la plantilla, vacía tu inventario y súbelo. SAAF valida los datos y da de alta cada activo con su QR listo para imprimir.</p>
+          </div>
+          <div class="rvl" style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;transition-delay:.08s">
+            <div style="display:flex;align-items:center;gap:11px;padding:13px;border:1px dashed var(--border);border-radius:12px;margin-bottom:12px"><i data-lucide="file-spreadsheet" style="color:#16A34A"></i><div style="flex:1"><div style="font-size:13.5px;font-weight:600;color:var(--text)">inventario_2026.xlsx</div><div class="mono" style="font-size:11px;color:var(--text3)">1,284 filas · validado</div></div><i data-lucide="check-circle-2" style="color:#16A34A"></i></div>
+            <div style="height:8px;border-radius:99px;background:var(--barlow);overflow:hidden;margin-bottom:8px"><div style="height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div>
+            <div class="mono" style="font-size:11.5px;color:var(--text3);text-align:right">100% importado</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= BLOG ================= -->
+    <div class="v v-blog" data-document-role="page" data-label="Blog">
+      <section style="padding:76px 40px 56px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Blog</div>
+        <h1 class="rvl in disp" style="font-size:52px;line-height:1.05;font-weight:700;margin:0 auto 18px;max-width:820px;color:var(--text)">Ideas para controlar mejor tu activo fijo</h1>
+        <p class="rvl in" style="font-size:18px;line-height:1.55;color:var(--text2);margin:0 auto;max-width:600px">Guías prácticas sobre inventarios, depreciación y buenas prácticas de administración de activos.</p>
+      </section>
+
+      <section style="padding:0 40px 96px">
+        <div style="max-width:1120px;margin:0 auto">
+          <div class="rvl" style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;margin-bottom:20px">
+            <div class="card lift" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
+              <div style="aspect-ratio:16/9;position:relative;background:var(--surface)"><image-slot id="blog-hero" shape="rect" fit="cover" placeholder="Imagen destacada del artículo"></image-slot></div>
+              <div style="padding:30px"><span class="mono" style="font-size:11px;color:var(--accent2)">DESTACADO · DEPRECIACIÓN</span><h3 class="disp" style="font-size:26px;font-weight:600;margin:12px 0 10px;color:var(--text)">Depreciación fiscal vs. financiera: qué debes saber</h3><p style="font-size:14.5px;line-height:1.6;color:var(--text2);margin:0">Cómo se calcula cada una, en qué se diferencian y por qué automatizarlas evita errores en tu cierre contable.</p></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:20px">
+              <sc-for list="{{ blogSide }}" as="b" hint-placeholder-count="2">
+                <div class="card lift" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:24px;flex:1"><span class="mono" style="font-size:11px;color:var(--accent2)">{{ b.tag }}</span><h3 style="font-size:18px;font-weight:700;margin:10px 0 8px;color:var(--text)">{{ b.title }}</h3><p style="font-size:13.5px;line-height:1.55;color:var(--text2);margin:0">{{ b.desc }}</p></div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+            <sc-for list="{{ blogGrid }}" as="b" hint-placeholder-count="3">
+              <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;overflow:hidden"><div style="aspect-ratio:16/9;position:relative;background:var(--surface)"><image-slot id="{{ b.slot }}" shape="rect" fit="cover" placeholder="Imagen"></image-slot></div><div style="padding:22px"><span class="mono" style="font-size:11px;color:var(--accent2)">{{ b.tag }}</span><h3 style="font-size:16.5px;font-weight:700;margin:9px 0 7px;color:var(--text)">{{ b.title }}</h3><p style="font-size:13px;line-height:1.55;color:var(--text2);margin:0">{{ b.desc }}</p></div></div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= QUIENES SOMOS ================= -->
+    <div class="v v-quienes" data-document-role="page" data-label="¿Quiénes somos?">
+      <section style="padding:76px 40px 44px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Software de administración de activo fijo</div>
+        <h1 class="rvl in disp" style="font-size:50px;line-height:1.06;font-weight:700;margin:0 auto 18px;max-width:860px;color:var(--text)">SAAF es el resultado de más de 30 años de experiencia</h1>
+      </section>
+      <section style="padding:0 40px 84px">
+        <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center">
+          <div class="rvl" style="border-radius:18px;overflow:hidden;border:1px solid var(--border);aspect-ratio:16/9;background:#000;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)"><iframe src="https://www.youtube.com/embed/4gyKSMr4Eqs" title="SAAF" style="width:100%;height:100%;border:0;display:block" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+          <div class="rvl" style="transition-delay:.05s">
+            <p style="font-size:15.5px;line-height:1.7;color:var(--text2);margin:0 0 16px">Somos una empresa ligada a <strong style="color:var(--text)">Grupo ANEPSA</strong>, que ofrece una amplia gama de servicios industriales como el levantamiento y control de activo fijo, con tecnología y software para administrarlo.</p>
+            <p style="font-size:15.5px;line-height:1.7;color:var(--text2);margin:0 0 16px">SAAF se ajusta a la medida de cada cliente y cuenta con una plataforma de última generación para la administración de activo fijo y su correcto seguimiento, según las necesidades de gestión, mantenimiento o financieras y fiscales.</p>
+            <p style="font-size:15.5px;line-height:1.7;color:var(--text2);margin:0">La experiencia y los años en el mercado brindan confianza a nuestros clientes, con metodologías y herramientas tecnológicas a la medida de lo que solicitan.</p>
+          </div>
+        </div>
+      </section>
+      <section style="padding:0 40px 96px">
+        <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <sc-for list="{{ valores }}" as="v" hint-placeholder-count="3">
+            <div class="card lift rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:28px"><div style="width:48px;height:48px;border-radius:13px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><i data-lucide="{{ v.icon }}" style="width:23px;height:23px"></i></div><h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:var(--text)">{{ v.title }}</h3><p style="font-size:14px;line-height:1.6;color:var(--text2);margin:0">{{ v.desc }}</p></div>
+          </sc-for>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= CONTACTO ================= -->
+    <div class="v v-contacto" data-document-role="page" data-label="Contacto">
+      <section style="padding:76px 40px 56px;text-align:center">
+        <div class="rvl in mono" style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:16px">Contacto</div>
+        <h1 class="rvl in disp" style="font-size:52px;line-height:1.05;font-weight:700;margin:0 auto 18px;max-width:760px;color:var(--text)">Solicita tu demo o cotización</h1>
+        <p class="rvl in" style="font-size:18px;line-height:1.55;color:var(--text2);margin:0 auto;max-width:580px">Acércate con nosotros; puedes escribirnos por este medio o por correo electrónico y un asesor te contactará.</p>
+      </section>
+
+      <section style="padding:0 40px 96px">
+        <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start">
+          <div class="rvl" style="background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:36px">
+            <h3 class="disp" style="font-size:22px;font-weight:600;margin:0 0 6px;color:var(--text)">Cuéntanos sobre tus activos</h3>
+            <p style="font-size:14px;color:var(--text2);margin:0 0 24px">Respondemos en horario de atención.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px"><div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Nombre</label><input placeholder="Tu nombre" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div><div><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Empresa</label><input placeholder="Tu empresa" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div></div>
+            <div style="margin-bottom:12px"><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Correo</label><input type="email" placeholder="tu@empresa.com" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            <div style="margin-bottom:12px"><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Teléfono</label><input placeholder="(+52) 55 0000 0000" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none"></div>
+            <div style="margin-bottom:20px"><label style="display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px">Mensaje</label><textarea rows="3" placeholder="¿Cuántos activos manejas?" style="width:100%;padding:12px 14px;border-radius:11px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none;resize:vertical"></textarea></div>
+            <button class="btn" style="width:100%;justify-content:center;border:none;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--onaccent);font-size:15px;font-weight:700;padding:15px;border-radius:12px;font-family:inherit;box-shadow:0 12px 28px -12px var(--glow)">Enviar solicitud</button>
+          </div>
+          <div class="rvl" style="display:flex;flex-direction:column;gap:14px;transition-delay:.06s">
+            <div style="background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:18px">
+              <div style="display:flex;gap:13px"><span style="width:42px;height:42px;border-radius:11px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><i data-lucide="phone" style="width:20px;height:20px"></i></span><div><div style="font-size:12.5px;color:var(--text3)">Teléfono</div><div style="font-size:15px;font-weight:700;color:var(--text)">(+52 1) 55-70-47-14-21</div></div></div>
+              <div style="display:flex;gap:13px"><span style="width:42px;height:42px;border-radius:11px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><i data-lucide="map-pin" style="width:20px;height:20px"></i></span><div><div style="font-size:12.5px;color:var(--text3)">Ubicación</div><div style="font-size:15px;font-weight:700;color:var(--text)">Enrique Rébsamen 512, CDMX</div></div></div>
+              <div style="display:flex;gap:13px"><span style="width:42px;height:42px;border-radius:11px;background:var(--surface);border:1px solid var(--border);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><i data-lucide="clock" style="width:20px;height:20px"></i></span><div><div style="font-size:12.5px;color:var(--text3)">Horario de atención</div><div style="font-size:15px;font-weight:700;color:var(--text)">Lun – Vie · 9am – 5pm</div><div style="font-size:12.5px;color:var(--text2)">Sábado y domingo: cerrado</div></div></div>
+            </div>
+            <div style="border-radius:18px;overflow:hidden;border:1px solid var(--border);aspect-ratio:16/10;position:relative;background:var(--surface)"><image-slot id="map" shape="rect" fit="cover" placeholder="Mapa de la ubicación (Enrique Rébsamen 512, CDMX)"></image-slot></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+  </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="position:relative;z-index:1;padding:60px 40px 40px;border-top:1px solid var(--border);background:var(--surface)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:11px;margin-bottom:18px"><span style="display:flex;flex-direction:column;gap:3px;width:40px"><span style="display:flex;gap:4px;height:11px"><span style="flex:1;border-radius:99px;background:var(--accent)"></span><span style="width:11px;border-radius:99px;background:var(--accent2)"></span></span><span style="display:flex;gap:4px;height:11px"><span style="width:11px;border-radius:99px;background:var(--accent2)"></span><span style="flex:1;border-radius:99px;background:var(--accent)"></span></span></span><span class="wm" style="font-size:22px;color:var(--text)">saaf</span></span>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--text2);margin:0 0 16px;max-width:280px">La administración de activos fijos más fácil y rápida de Latinoamérica.</p>
+          <div style="font-size:13.5px;line-height:1.9;color:var(--text2)"><div>Enrique Rébsamen 512, CDMX</div><span style="color:var(--accent2);font-weight:600">(+52) 55-7047-1421</span></div>
+        </div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:15px">Producto</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span class="lnk" onClick="{{ go.caracteristicas }}" style="color:var(--text2)">Características</span><span class="lnk" onClick="{{ go.planes }}" style="color:var(--text2)">Planes</span><span class="lnk" onClick="{{ go.blog }}" style="color:var(--text2)">Blog</span></div></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:15px">Empresa</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span class="lnk" onClick="{{ go.quienes }}" style="color:var(--text2)">¿Quiénes somos?</span><span class="lnk" onClick="{{ go.bolsa }}" style="color:var(--text2)">Bolsa de Trabajo</span><span class="lnk" onClick="{{ go.contacto }}" style="color:var(--text2)">Contacto</span></div></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:15px">Contacto</div><div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span class="lnk" onClick="{{ go.contacto }}" style="color:var(--text2)">Solicitar demo</span><span class="lnk" onClick="{{ go.contacto }}" style="color:var(--text2)">Hablar con un asesor</span></div></div>
+      </div>
+      <div style="border-top:1px solid var(--border);padding-top:24px;font-size:13px;color:var(--text3)">© 2026 SAAF · Software Activo Fijo. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:880},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;dark&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tema&quot;}}">
+class Component extends DCLogic {
+  state = { view: 'home', theme: 'dark' };
+
+  componentDidMount() { this._icons(); this._reveal(); this._scrollTop(); }
+  componentDidUpdate(prevP, prevS) {
+    this._icons();
+    if (prevS && prevS.view !== this.state.view) { this._reveal(); this._scrollTop(); }
+  }
+  _icons() { const go = () => { if (window.lucide) window.lucide.createIcons(); }; go(); setTimeout(go,120); setTimeout(go,400); setTimeout(go,1000); }
+  _scrollTop() { try { const el = this.rootEl || document.scrollingElement; window.scrollTo(0,0); if (this.rootEl && this.rootEl.scrollIntoView) {} } catch(e){} }
+  _countUp(el){
+    const t = parseFloat(el.getAttribute('data-count')); if (isNaN(t)) return;
+    const suf = el.getAttribute('data-suffix')||''; const dur=1200, s=performance.now();
+    const fmt=n=>Math.round(n).toLocaleString('en-US');
+    const tick=now=>{ const p=Math.min((now-s)/dur,1); const e=1-Math.pow(1-p,3); el.textContent=fmt(t*e)+suf; if(p<1)requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+  _reveal(){
+    const root = this.rootEl || document;
+    setTimeout(()=>{
+      const els = Array.from(root.querySelectorAll('.rvl:not(.in)'));
+      const counters = Array.from(root.querySelectorAll('[data-count]'));
+      const seen = new WeakSet();
+      const revealAll=()=>{ els.forEach(e=>e.classList.add('in')); counters.forEach(e=>{ if(!seen.has(e)){seen.add(e); this._countUp(e);} }); };
+      if(!('IntersectionObserver' in window)){ revealAll(); return; }
+      const io=new IntersectionObserver(en=>{ en.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -6% 0px',threshold:.06});
+      els.forEach(e=>io.observe(e));
+      const cio=new IntersectionObserver(en=>{ en.forEach(e=>{ if(e.isIntersecting&&!seen.has(e.target)){ seen.add(e.target); this._countUp(e.target); cio.unobserve(e.target);} }); },{threshold:.5});
+      counters.forEach(e=>cio.observe(e));
+      setTimeout(revealAll, 2600);
+    }, 40);
+  }
+
+  _mk(v){ return () => this.setState({ view: v }); }
+
+  renderVals(){
+    const dark = this.state.theme === 'dark';
+    const pal = dark ? {
+      bg:'#070C16', bg2:'#0B1424', navbg:'rgba(9,14,24,.72)',
+      surface:'rgba(255,255,255,.045)', surface2:'rgba(255,255,255,.07)',
+      panel:'rgba(255,255,255,.035)', panel2:'rgba(255,255,255,.05)', panel3:'rgba(255,255,255,.03)',
+      border:'rgba(255,255,255,.10)', text:'#EAF0FA', text2:'rgba(234,240,250,.66)', text3:'rgba(234,240,250,.40)',
+      accent:'#4E9BF5', accent2:'#38E0C8', onaccent:'#04101E',
+      glow:'rgba(78,155,245,.45)', glow2:'rgba(56,224,200,.28)', barlow:'rgba(255,255,255,.09)',
+      ctabg:'#0B1424'
+    } : {
+      bg:'#F5F8FC', bg2:'#ECF1F8', navbg:'rgba(245,248,252,.8)',
+      surface:'#FFFFFF', surface2:'#FFFFFF',
+      panel:'#FFFFFF', panel2:'#F3F7FC', panel3:'#F7FAFD',
+      border:'#E1E8F2', text:'#0C2340', text2:'#47576A', text3:'#8A97A8',
+      accent:'#2F6FD6', accent2:'#0FA894', onaccent:'#FFFFFF',
+      glow:'rgba(47,111,214,.22)', glow2:'rgba(15,168,148,.16)', barlow:'#E6EDF6',
+      ctabg:'#FFFFFF'
+    };
+    const view = this.state.view;
+    const navDef = [
+      ['¿Quiénes somos?','quienes'], ['Características','caracteristicas'], ['Planes','planes'],
+      ['Blog','blog'], ['Bolsa de Trabajo','bolsa'], ['Contacto','contacto']
+    ];
+    const navItems = navDef.map(([label,key]) => {
+      const active = view === key;
+      return {
+        label, onClick: this._mk(key),
+        style: `position:relative;font-size:14px;font-weight:500;padding:8px 12px;color:${active?'var(--text)':'var(--text2)'}`,
+        dotStyle: `position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:16px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:${active?1:0};transition:opacity .18s`
+      };
+    });
+
+    const go = {
+      home:this._mk('home'), quienes:this._mk('quienes'), caracteristicas:this._mk('caracteristicas'),
+      planes:this._mk('planes'), blog:this._mk('blog'), bolsa:this._mk('bolsa'), contacto:this._mk('contacto')
+    };
+
+    const paises = ['México','Colombia','Perú','Chile','Argentina','Costa Rica','Panamá','Bolivia','Guatemala'];
+
+    return {
+      themeClass: dark ? 'tdark' : 'tlight', view, viewClass: 'show-'+view, go, navItems,
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      themeIcon: dark ? 'sun' : 'moon',
+      isHome: view==='home', isPlataforma: view==='plataforma', isSoluciones: view==='soluciones',
+      isCasos: view==='casos', isIntegraciones: view==='integraciones', isBlog: view==='blog',
+      isNosotros: view==='nosotros', isContacto: view==='contacto',
+      paisesLoop: paises.concat(paises),
+      pipeline: [
+        { step:'01', icon:'file-text', title:'Documento', desc:'Factura o ficha del activo' },
+        { step:'02', icon:'cloud-upload', title:'Importación', desc:'Carga masiva por plantilla' },
+        { step:'03', icon:'qr-code', title:'QR generado', desc:'Código único por activo' },
+        { step:'04', icon:'clipboard-list', title:'Ficha', desc:'Estado, ubicación y valor' },
+        { step:'05', icon:'trending-down', title:'Depreciación', desc:'Fiscal y financiera' }
+      ],
+      ledger: [
+        { name:'Laptop Dell Latitude', id:'AF-0421', loc:'Sistemas · CDMX', val:'$18,400', state:'Activo' },
+        { name:'Torno CNC industrial', id:'AF-1180', loc:'Planta · Monterrey', val:'$412,000', state:'Activo' },
+        { name:'Camioneta de reparto', id:'AF-0655', loc:'Logística · GDL', val:'$286,500', state:'Activo' },
+        { name:'Escritorio ejecutivo', id:'AF-0092', loc:'Corporativo · Bogotá', val:'$7,900', state:'Activo' }
+      ],
+      modules: [
+        { icon:'building-2', title:'Multiempresa', desc:'Consolida los activos de varias empresas en un solo panel.' },
+        { icon:'qr-code', title:'Dashboard con QR', desc:'Genera código de barras y QR con la URL a la ficha del activo.' },
+        { icon:'package-plus', title:'Alta de activos', desc:'Registra activos de forma rápida y sencilla en el sistema.' },
+        { icon:'trending-down', title:'Depreciación', desc:'Cálculo fiscal y financiero de manera automática.' },
+        { icon:'cloud-upload', title:'Importación masiva', desc:'Carga tu inventario completo desde una plantilla.' },
+        { icon:'file-bar-chart', title:'Reportes', desc:'Consulta y exporta el estado de tus activos cuando lo necesites.' }
+      ],
+      soluciones: [
+        { icon:'layers', title:'Gestión de activos', desc:'Ten claro qué tienes, dónde está y en qué estado se encuentra cada activo.', items:['Ubicación de los activos','Centros de costos','Vales de resguardo','Registro de entradas y salidas'] },
+        { icon:'wrench', title:'Mantenimiento', desc:'Da seguimiento al ciclo de vida y la conservación de cada activo.', items:['Estado de conservación','Notificaciones en tiempo real','Auditoría móvil en campo','Historial por activo'] },
+        { icon:'calculator', title:'Financiero y fiscal', desc:'Mantén tu contabilidad de activo fijo siempre al corriente.', items:['Depreciación financiera y fiscal','Valor en libros','Alta y baja de activos','Edición de ficha'] }
+      ],
+      casos: [
+        { icon:'cpu', title:'Equipo de cómputo y TI', desc:'Laptops, servidores y periféricos etiquetados y auditables.', slot:'caso-ti', ph:'Equipo de cómputo / TI' },
+        { icon:'factory', title:'Maquinaria industrial', desc:'Control de maquinaria pesada y su depreciación por planta.', slot:'caso-ind', ph:'Maquinaria industrial' },
+        { icon:'armchair', title:'Mobiliario y oficina', desc:'Inventario de mobiliario por ubicación y centro de costos.', slot:'caso-mob', ph:'Mobiliario de oficina' },
+        { icon:'car', title:'Flotilla y vehículos', desc:'Seguimiento de vehículos con ubicación y resguardo.', slot:'caso-veh', ph:'Flotilla / vehículos' },
+        { icon:'building', title:'Inmuebles', desc:'Registro de inmuebles y su valor en libros a lo largo del tiempo.', slot:'caso-inm', ph:'Inmuebles' },
+        { icon:'stethoscope', title:'Equipo médico', desc:'Control de equipo médico con auditoría y trazabilidad.', slot:'caso-med', ph:'Equipo médico' }
+      ],
+      integraciones: [
+        { icon:'file-spreadsheet', title:'Excel / CSV', desc:'Importa y exporta con plantillas.' },
+        { icon:'qr-code', title:'Códigos QR', desc:'Generación automática por activo.' },
+        { icon:'scan-line', title:'Código de barras', desc:'Lectura y etiquetado en campo.' },
+        { icon:'smartphone', title:'App móvil', desc:'Auditoría desde el celular.' },
+        { icon:'key', title:'OAuth2', desc:'Acceso seguro y federado.' },
+        { icon:'file-bar-chart', title:'Reportes', desc:'Exporta a tu contabilidad.' },
+        { icon:'bell', title:'Notificaciones', desc:'Alertas en tiempo real.' },
+        { icon:'shield-check', title:'SSL / HTTPS', desc:'Tráfico siempre cifrado.' }
+      ],
+      blogSide: [
+        { tag:'INVENTARIOS', title:'5 señales de que necesitas dejar el Excel', desc:'Cuándo un inventario en hojas de cálculo se vuelve un riesgo.' },
+        { tag:'QR', title:'Por qué etiquetar tus activos con QR', desc:'Trazabilidad y auditorías más rápidas en campo.' }
+      ],
+      blogGrid: [
+        { tag:'MULTIEMPRESA', title:'Consolidar activos de varias empresas', desc:'Buenas prácticas para grupos empresariales.', slot:'blog-1' },
+        { tag:'SEGURIDAD', title:'OAuth2 y tus datos de activo fijo', desc:'Qué es y por qué importa para tu operación.', slot:'blog-2' },
+        { tag:'FISCAL', title:'Prepara tu cierre de activo fijo', desc:'Checklist para un cierre contable sin sustos.', slot:'blog-3' }
+      ],
+      valores: [
+        { icon:'history', title:'Experiencia', desc:'Más de 30 años en levantamiento y control de activo fijo, respaldados por Grupo ANEPSA.' },
+        { icon:'sliders-horizontal', title:'A la medida', desc:'Una solución que se ajusta a las necesidades de gestión, mantenimiento y fiscales de cada cliente.' },
+        { icon:'shield-check', title:'Confianza', desc:'Metodologías y herramientas tecnológicas que dan certeza a nuestros clientes.' }
+      ],
+      caractFunciones: [
+        'Acceso a la ficha del activo mediante lectura de QR desde cualquier dispositivo con internet',
+        'Control de cambios con autorizaciones y permisos según el perfil de usuario',
+        'Dashboard editable',
+        'Generación de códigos de barras y QR',
+        'Personalización de formatos de módulos a la medida de la empresa',
+        'App en Clouding o Web Service',
+        'Alta de fotografías, facturas y documentos',
+        'Creación y administración de multiempresas',
+        'Creación y administración de usuarios y perfiles',
+        'Historial de cambios por activo',
+        'Importación y exportación de bases de activo fijo',
+        'Vales de resguardo por usuario'
+      ],
+      ventajas: [
+        { icon:'map-pin', title:'Activo', items:['Ubicación ágil de los activos','Historial y control de activos','Placas con código de barras y QR'] },
+        { icon:'file-bar-chart', title:'Reporte', items:['Depreciaciones: Fiscal, Financiera, C-15 y C-6','Bajas','Reexpresiones'] },
+        { icon:'building-2', title:'Multiempresa', items:['Base de datos unificada','Número ilimitado de empresas'] },
+        { icon:'shield-check', title:'Resguardo', items:['Control de resguardos','Localización de los activos','Trazabilidad de los activos'] }
+      ],
+      planItems: ['Alta y baja de activos','Edición de ficha','Depreciación de activos','Registro de entradas','Centros de costos','Ubicación de activos','Notificaciones en tiempo real','Registro de salidas','Multiempresas','Vales de resguardo','Control de usuarios','Depreciación financiera y fiscal'],
+      bolsaAreas: ['Arquitectura','Ingeniería civil','Ingeniería industrial','Peritos valuadores','Tecnologías de la información']
+    };
+  }
+}
+</script>
+</body>
+</html>
